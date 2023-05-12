@@ -1,0 +1,25 @@
+title Virologist moves to Field
+
+
+actor Player
+Player ->+ "v: Virologist": moveTo(newField)
+
+"v: Virologist" ->+ "currentField: Field" : stepOut(v)
+"currentField: Field" -->- "v: Virologist" :
+
+"v: Virologist" ->+ "newField: Field" : stepIn(v)
+"newField: Field" -->- "v: Virologist" :
+
+loop e in effects
+"v: Virologist" ->+ "e: Effect" : spreads()
+"e: Effect" -->- "v: Virologist" : a
+end
+
+opt a!= null
+"v: Virologist" ->+ "newField: Field" : spreadAgentBy(a,v)
+"newField: Field" -->- "v: Virologist" :
+end
+
+"v: Virologist" -->- Player :
+
+participant "a: Agent"

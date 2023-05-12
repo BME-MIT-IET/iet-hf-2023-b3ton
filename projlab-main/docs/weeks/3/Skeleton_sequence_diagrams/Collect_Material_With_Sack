@@ -1,0 +1,27 @@
+title Collect_Material_With_Sack
+
+actor Tester
+Tester ->+ "v: Virologist" : collectFromField()
+"v: Virologist" ->+ "s: Storage" : collectBy(v)
+"s: Storage" ->+ "v: Virologist" : addAminoAcid(amount)
+
+"v: Virologist" ->+ "e: ChoreaEffect" : moreMaterial()
+"e: ChoreaEffect" -->- "v: Virologist" : 1
+
+"v: Virologist" ->+ "e2: SackEquipment" : moreMaterial()
+"e2: SackEquipment" -->- "v: Virologist" : 2
+
+"v: Virologist"  -->- "s: Storage" : remainingAminoAcid
+"s: Storage" ->+ "v: Virologist" : addNucleotide(amount)
+
+"v: Virologist" ->+ "e: ChoreaEffect" : moreMaterial()
+"e: ChoreaEffect" -->- "v: Virologist" : 1
+
+"v: Virologist" ->+ "e2: SackEquipment" : moreMaterial()
+"e2: SackEquipment" -->- "v: Virologist" : 2
+
+"v: Virologist"  -->- "s: Storage" : remainingNucleotide
+"s: Storage" -->- "v: Virologist" : b
+"v: Virologist" -->- Tester :
+
+end

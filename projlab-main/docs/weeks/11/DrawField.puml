@@ -1,0 +1,17 @@
+@startuml Draw Field
+title Draw Field
+Controller -> FieldView ++ : draw()
+FieldView -> "field : Field" ++ : getNeighbors()
+"field : Field" --> FieldView -- : Field[0..*]
+FieldView -> "field : Field" ++ : getVirologists()
+"field : Field" --> FieldView -- : Virologist[0..*]
+FieldView -> Canvas ++ : getBackGround()
+Canvas --> FieldView -- : Graphics
+FieldView -> Canvas ++ : getNeighborFields()
+Canvas --> FieldView -- : JTable
+FieldView -> Canvas ++ : getVirologist()
+Canvas --> FieldView -- : JButton[1..*]
+FieldView -> Canvas ++ : reDraw()
+Canvas --> FieldView --
+FieldView --> Controller --
+@enduml

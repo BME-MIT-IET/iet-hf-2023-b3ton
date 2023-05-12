@@ -1,0 +1,69 @@
+\subsection{Áttekintés}
+
+\subsubsection{Általános áttekintés}
+
+A játékban minden felhasználó a saját virológus karakterét irányítja. Lehetőség van egymással interakcióba lépni, a karaktert léptetni, a pályán lévő objektumokat felszedni majd azokat alkalmazni, valamint egyéb döntéseket meghozni is.
+A játékban a játékosok felváltva kerülnek sorra. Minden körben egy lépést és egy akciót hajthatnak végre. Minden egyes játékos érzékelni tudja a vele azonos mezőn álló többi karaktert, akikkel egy közös mezőn állva tudnak interakcióba lépni. A játékosok azt is ismerik, milyen akciókat hajthatnak végre, milyen mezőkre léphetnek.
+A pályán találhatók más objektumok is, ezek lehetnek permanensek vagy felszedhetőek. Az utóbbi esetben a játékosok felvehetik, elmozdíthatják őket. Az ilyen objektumok egyes akciók keretében játékos-játékos között is gazdát cserélhetnek.
+
+\subsubsection{Funkciók}
+
+\textbf{Megadott követelmények:}
+
+``Egy pusztító biológiai katasztrófában mindenki elvesztette a látását. A városban virológusok kóborolnak és gyógymódot kutatnak.
+A különféle vírusok genetikai kódja egy-egy laboratórium falára van felkarcolva. Ahhoz, hogy egy virológus a genetikai kódot megismerje, el kell jutnia az adott laboratóriumba, és le kell tapogatnia a genetikai kódot. Ez alapján lehet majd vagy vakcinát, vagy magát a vírust előállítani.
+Egy már megismert kód alapján a vírus vagy a vakcina (közös nevükön: ágens) létrehozható, de ehhez a virológusnak a szükséges mennyiségű aminosavval és nukleotiddal (közös néven: anyag) kell rendelkeznie. Az aminosavak és a nukleotidok különféle raktárakban szedhetők össze, de mindenki csak egy korlátos mennyiséget hordhat belőlük magánál. Ha a begyűjtött anyag mennyisége eléri ezt a korlátot, akkor többet már nem tud magához venni.
+Egy virológus az előállított ágenst rövid időn belül felhasználhatja: vagy saját magára, vagy egy másik virológusra kenheti, de csak akkor, ha a kenést végző virológus meg tudja érinteni a másikat. A felkent ágensek csak adott ideig hatásosak, az idő letelte után elbomlanak, hatásuk megszűnik.
+Sokféle ágens létezik. Van olyan, amelyik vitustáncot okoz: az áldozat kontrollálatlanul, véletlenszerű mozgással kezd el haladni. Van olyan, amely megvéd attól, hogy más virológusok egyes ágensei hatással legyenek az ágens hatása alatt álló virológusra. Van olyan ágens, amely megbénít, így amíg az ágens hatása tart, az áldozat nem tud semmit csinálni (lebénul). Van amelyiktől az áldozat elfelejti a már megismert genetikai kódokat.
+A virológusok a vándorlás során védőfelszereléseket is gyűjthetnek. A védőfelszerelések a városban vannak szétszórva. Egy felszerelés megszerzéséhez a virológusnak a megfelelő óvóhelyre kell bemennie, és a védőfelszerelést fel kell vennie. A felszerelések csak azt a virológust védik, aki viseli őket. A felszerelések hatása addig tart, amíg a virológus viseli őket. Egyszerre azonban maximum 3 felszerelés viselhető.
+Sokféle védőfelszerelés létezik. Van védőköpeny, amely az ágenseket 82,3\%-os hatásfokkal tartja távol. Van zsák, amely megnöveli a virológus anyaggyűjtő képességét. Van kesztyű, amellyel a felkent ágens a kenőre visszadobható.
+A virológusok a vándorlásuk során találkozhatnak egymással. Találkozáskor elmehetnek egymás mellett, ágenst kenhetnek a másik virológusra, vagy, amíg a másik virológus lebénult állapotban van, elvehetik a másik anyagkészletét és felszerelését.
+A játékot az a virológus nyeri, aki legelőször megtanulja az összes fellelhető genetikai kódot. A játéktér eltérő oldalszámú sokszögekből álló rácsot alkot, a virológusok ennek mezőin (szabad terület, raktár, óvóhely, laboratórium stb.) lépkedhetnek."
+
+\bigskip
+
+\textbf{Saját követelmények:}
+
+A játékot humán játékosok játszhatják. Alapvetően több játékos részére van tervezve, de akár egy résztvevő is indíthat játékot. Minden játékoshoz tartozik egy karakter (virológus), akit irányíthatnak. A játék körökre van osztva, a játékosok egymás után kerülnek sorra egy a játék elején meghatározott sorrendben. Egy körben egy játékos két dolgot tehet: Először választhat a jelenlegi mezőjével szomszédosak közül, hogy melyikre szeretne lépni (ez nem kötelező, akár helyben is maradhat). Ezt követően pedig lehetősége van legfeljebb egy akciót végrehajtani az alábbiak közül:
+\begin{itemize}
+	\item Genetikai kód letapogatása
+	\item Anyag begyűjtése
+	\item Védőfelszerelés felvétele
+	\item Ágens elkészítése
+	\item Ágens felhasználása
+	\item Lopás
+\end{itemize}
+Néhány akció csak bizonyos mezőkön hajtható végre, és egyéb feltételek megléte (pl. másik játékostárs jelenléte, bizonyos anyagmennyiség birtoklása) is szükséges lehet.
+A játékban fontos szerepe van az anyagnak, ennek két típusát különböztetjük meg: aminosav és nukleotid. Ezeket a virológusok a raktár mezőkön gyűjthetik össze az Anyag begyűjtése akciót választva, amennyiben az adott raktár területén található anyag. Az anyagokat ágensek elkészítésére tudják felhasználni.
+Fontos, hogy egy virológusnál egyszerre csak bizonyos mennyiségű anyag lehet, ha a birtokolt mennyiség elérné ezt a korlátot, nem gyűjthet be több anyagot: felveszi a még felvehető mennyiséget, a maradék a raktárban marad.
+Az ágensek is kétfélék lehetnek: vírusok vagy vakcinák. A vakcinák hatása előnyös, a vírusoké azonban ártalmas. Az ágensek genetikai kódjából kiolvasható, hogy mennyi és milyen anyagokra van szükség az elkészítésükhöz. Ezt a virológusok a laboratóriumok falán tudják letapogatni a Genetikai kód letapogatása akció keretében. Egy kódot akárhány virológus letapogathat, és letapogatás nem törli le a genetikai kódot a falról.
+Ha egy ágensnek megismeri valaki a genetikai kódját, majd összegyűjti a hozzá szükséges anyagokat, az Ágens elkészítése akciót választva elkészítheti. Az ezt követő körökben pedig az Ágens felhasználása akcióval rákenheti egy másik virológusra (vagy akár saját magára). Az ágensek hatása előre meghatározott körig tart, utána érvényüket vesztik. (Kivéve a felejtő-vírust, melynek egyszeri hatása van.)
+A következő ágensek léteznek:
+\begin{itemize}
+	\item Vítustánc-vírus: amíg a vírus hatása alatt áll egy játékos, a karakterét nem tudja irányítani, és a köre elején szomszédos mezők közül egyet véletlenszerűen választva lép.
+	\item Vakcina: Amikor valakire alkalmazzák, azon megszűnnek hatni a már rákent ágensek, és a vakcina hatóidejének lejártáig más ágensek sem kerülhetnek rá.
+	\item Paralízis-vírus: adott számú körig egy helyben marad a játékos, nem tud se lépni, se akciót végrehajtani. Egyedül a védőfelszerelésének hatásai érvényesülhetnek. Ilyenkor más virológusok képesek védőfelszerelést és alapanyagot a virológustól ellopni.
+	\item Felejtő-vírus: akire alkalmazzák, elfelejti az összes genetikai kódot, amit addig megtanult, tehát nem képest újabb ágenseket készíteni, és a játék célját is nehezebben éri el.
+\end{itemize}
+A játékosok védőfelszereléseket is gyűjthetnek a játékban. Ezek az óvóhely mezőkről szedhetők fel a Védőfelszerelés felvétele akció választásával. Egy virológusnál egyszerre maximum három, különböző védőfelszerelés lehet. Ezek nem tehetők le a játéktéren, viszont ellophatók egymástól a Lopás akció keretében. Az akció csak akkor lehet sikeres, ha a megtámadott játékos bénult állapotban van. Ekkor a lopást indító virológushoz átkerül egy védőfelszerelés és a maximálisan elvehető mennyiségű anyag a játékostársa készletéből (amennyiben ezek megtalálhatóak voltak a meglopandó virológuson). Ha a lopás célpontja nincs lebénulva, akkor  a játék változás nélkül folytatódik.
+A következő védőfelszerelések léteznek:
+\begin{itemize}
+	\item Védőköpeny: az esetek 82,3\%-ban a köpenyt viselőre rákent ágensek hatástalanok lesznek. A saját magára kent ágensek esetén is azonos a hatása.
+	\item Zsák: növeli a virológus anyag-befogadóképességét, több anyagot tud magánál tartani.
+	\item Kesztyű: visszaveri a felvétel után a virológusra dobott ágenst, annak hatásától függetlenül. Egy használat után elveszik.
+\end{itemize}
+Egy adott típusú védőfelszerelésből több példány is megtalálható a játékban, egy játékos azonban minden típusból legfeljebb egyet birtokolhat.
+A Lopás és az Ágens felhasználása akcióra akkor van lehetőség, ha egy virológus más virológusokkal találkozik egy játékmezőn. Ez bármely típusú területen (laboratórium, raktár, óvóhely, szabad terület) történhet. Egy területtel legalább egy, de véges számú más terület lehet szomszédos.
+A játékot az a játékos nyeri, aki az összes a játékban szereplő ágens genetika kódját először megtanulja.
+
+\subsubsection{Felhasználók}
+
+A játék nem céloz meg kifejezetten egy korosztályt, bárki játszhatja, akit érdekel a fantasy játékok világa. A játékban való részvételhez csak a legalapvetőbb számítógépes ismeretek szükségesek. Egyszerre több felhasználó is részt vehet a játékban, egy eszközön, körönként átadva az irányítást.
+
+\subsubsection{Korlátozások}
+
+A játéknak ezen dokumentumban leírtaknak megfelelően kell működnie. Minden esetben annak kell végrehajtódnia, amit a felhasználó kiválaszt. A játék működésére vonatkozóan alapvető elvárás, hogy egy átlagos mai számítógépen működjön, persze ha van rajta Java Runtime Environment.
+
+\subsubsection{Feltételezések, kapcsolatok}
+
+A feladat alapvető leírása alapján készítettük el a részletes feladatleírást, pontosítottuk a szabályrendszert. Az ütemtervet a ``2.6 Projektterv" részben használtuk fel.

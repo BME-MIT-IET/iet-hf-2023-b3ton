@@ -1,0 +1,7 @@
+title BearDanceEffect spreads
+
+
+"v: Virologist" ->+  "e: BearDanceEffect" : spreads()
+"e: BearDanceEffect" -->- "v: Virologist" : bv
+"e: BearDanceEffect" -->* "bv: BearDanceVirus" : <<create>>
+

@@ -1,0 +1,9 @@
+title Collect AminoAcid
+
+
+"s: Storage" ->+ "v: Virologist" : addAminoAcid(amount)
+loop e in effects
+    "v: Virologist" ->+ "e: Effect" : moreMaterial()
+    "e: Effect" -->- "v: Virologist" : inventoryIncrease
+end
+ "v: Virologist" -->- "s: Storage" : remaining

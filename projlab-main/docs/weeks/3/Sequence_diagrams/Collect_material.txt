@@ -1,0 +1,12 @@
+title Collect material
+
+
+actor Player
+Player ->+ "v: Virologist" : collectFromField()
+"v: Virologist" ->+ "s: Storage" : collectBy(v)
+"s: Storage" ->+ "v: Virologist" : addAminoAcid(amount)
+"v: Virologist"  -->- "s: Storage" : remainingAminoAcid
+"s: Storage" ->+ "v: Virologist" : addNucleotide(amount: int)
+"v: Virologist"  -->- "s: Storage" : remainingNucleotide
+"s: Storage" -->- "v: Virologist" : b
+"v: Virologist" -->- Player :

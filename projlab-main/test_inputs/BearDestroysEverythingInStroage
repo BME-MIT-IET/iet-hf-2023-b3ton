@@ -1,0 +1,11 @@
+create-field infected-laboratory chorea-gene
+create-field storage 10 10
+get-material-of-field 2
+connect-fields 0 2
+create-virologist
+place-virologist 3 2
+next-turn
+virologist-moves 0
+next-turn
+virologist-moves 2
+get-material-of-field 2

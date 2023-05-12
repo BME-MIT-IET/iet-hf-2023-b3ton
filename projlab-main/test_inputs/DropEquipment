@@ -1,0 +1,5 @@
+create-virologist
+add-equipment 0 sack
+next-turn
+virologist-action drop-equipment 1
+get-equipments 0

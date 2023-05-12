@@ -1,0 +1,5 @@
+title Effect rampage
+
+
+"v: Virologist" ->+  "e: Effect" : rampage()
+"e: Effect" -->- "v: Virologist" : false

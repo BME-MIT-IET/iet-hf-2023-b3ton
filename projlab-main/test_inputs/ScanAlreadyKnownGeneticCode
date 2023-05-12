@@ -1,0 +1,12 @@
+create-field laboratory vaccine-gene
+create-field laboratory vaccine-gene
+connect-fields 0 1
+create-virologist
+place-virologist 2 0
+next-turn
+virologist-action collect
+get-genetic-codes 2
+virologist-moves 1
+next-turn
+virologist-action collect
+get-genetic-codes 2

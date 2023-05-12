@@ -1,0 +1,23 @@
+create-field infected-laboratory paralyzing-gene
+create-field storage 60 40
+create-field field 
+connect-fields 0 2 
+connect-fields 2 3
+create-virologist
+create-virologist
+determinism true
+place-virologist 4 0
+place-virologist 5 3
+add-equipment 5 axe
+next-turn
+virologist-moves 2
+next-turn
+get-virologists 3
+get-neighbor-fields 3
+virologist-moves 2
+get-virologists 2
+get-effects 4
+virologist-action kill 4
+next-turn
+get-virologists 2
+get-material-of-field 2

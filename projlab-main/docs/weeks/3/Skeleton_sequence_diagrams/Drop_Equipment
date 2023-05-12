@@ -1,0 +1,8 @@
+title Drop_Equipment
+
+
+actor Tester
+Player ->+ "v: Virologist" : dropEquipment(e)
+"v: Virologist" -->- Tester : 
+
+participant "e: SackEquipment"

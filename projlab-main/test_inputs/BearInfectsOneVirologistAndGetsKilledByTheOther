@@ -1,0 +1,22 @@
+create-field infected-laboratory chorea-gene
+create-field field 
+connect-fields 0 2
+create-virologist
+create-virologist
+create-virologist
+determinism true
+place-virologist 3 0
+place-virologist 4 2 
+place-virologist 5 2
+add-effect 5 protecting 10
+add-equipment 5 axe
+next-turn
+virologist-moves 2
+next-turn
+next-turn
+get-virologists 2
+get-effects 3
+get-effects 4
+get-effects 5
+virologist-action kill 3
+next-turn

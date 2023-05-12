@@ -1,0 +1,8 @@
+create-field shelter axe
+get-equipments-of-field 0
+create-virologist
+place-virologist 2 0
+next-turn
+virologist-action collect
+get-equipments 2
+get-equipments-of-field 0

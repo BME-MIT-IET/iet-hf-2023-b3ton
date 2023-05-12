@@ -1,0 +1,150 @@
+@startuml gui_classdiagram
+
+class Virologist{
+	-baseMaxMaterial: int {readonly}
+	-nucleotide: int
+	-aminoAcid: int
+	+moveTo(f: Field): void
+	+collectFromField(): void
+	+createAgent(gc: GeneticCode): void
+	+useAgentOn(v: Virologist, a: Agent): void
+	+stealFrom(v: Virologist): void
+	+getStolenBy(v: Virologist): void
+	+kill(v: Virologist): void
+	+die(): void
+	+rampage(): void
+	+addGeneticCode(gc: GeneticCode): boolean
+	+forgetGeneticCodes(): void
+	+addEffectBy(e: Effect, v: Virologist): boolean
+	+addEquipment(e: Equipment): boolean
+	+dropEquipment(e: Equipment): void
+	+addAminoAcid(amount: int): int
+	+addNucleotide(amount: int): int
+	+yourTurn(): void
+}
+
+class Field {
+	+stepIn(v: Virologist): void 
+	+stepOut(v: Virologist): void
+	+spreadAgentBy(a: Agent, by: Virologist): void
+	+destroyObjects();
+	+collectBy(v: Virologist): boolean
+	+getVirologists(): Set<Virologis>
+}
+
+
+Field "-currentField 1" --- " #virologists 0..*" Virologist
+Field o--- "-neighbourFields 0..*" Field
+
+class Controller {
+	{static} +getNewId(): int
+	{static} +setDeterminism(value: boolean)
+	{static} +getDeterminism(): boolean
+	{static} +isGameRunning(): boolean
+	{static} +getCurrentVirologist(): Virologist
+	{static} +addGeneticCode(gc: GeneticCode): GeneticCode
+	{static} +addField(f: Field): boolean
+	{static} +addVirologist(v: Virologist): boolean
+	{static} +removeVirologist(v: Virologist): boolean
+	{static} +getFields(): {Integer, Field}[0..*]
+	{static} +getField(id: int): Field
+	{static} +getVirologist(id: int): Virologist
+	{static} +nextTurn()
+	{static} +virologistLearnedGeneticCode(v: Virologist)
+	{static} +handleUserInput(userSel: UserSelection)
+}
+
+Controller *--- "-gameState 1" GameState 
+
+enum GameState {
+	WaitingForMove
+	WaitingForAction
+	WaitingForNextTurn
+	
+	+nextState(): GameState
+}
+
+enum Action {
+	CreateAgent
+	DropEquipment
+	Kill
+	Steal
+	UseAgent
+	Collect
+}
+
+class UserSelection {
+	+selectedVirologistID: int
+	+selectedFieldID: int
+	+selectedAgentID: int
+	+selectedEquipmentID: int
+	+selectedAction: Action
+	+selectedGeneticCode: GeneticCode
+}
+
+UserSelection ...> Action
+
+Action <... Canvas
+Action <... Controller
+
+Controller o-- " -virologists 0..*" Virologist
+Controller o-- " -fields 0..*" Field
+Controller --> " -winner 1" Virologist
+Controller ...> FieldView
+Controller ...> VirologistView
+Controller ...> UserSelection
+
+interface View {
+	{abstract} +draw()
+}
+
+View <|... VirologistView
+View <|... FieldView
+
+class VirologistView <<singleton>> {
+	-virologist: Virologist
+	{static} +getInstance(): VirologistView
+	+setVirologist(v: Virologist)
+	+draw()
+}
+
+VirologistView ---> "- virologist 1" Virologist
+
+class FieldView <<singleton>> {
+	-field: Field
+	{static} +getInstance(): FieldView
+	+setField(f: Field)
+	+draw()
+}
+
+FieldView ---> "- field 1" Field
+
+class Canvas <<singleton>> {
+	-inventory: JTable
+	-neighborFields: JTable
+	-actions: JTable
+	-backGround: Graphics
+	-virologists: RadioButton
+	{static} +getInstance(): Canvas
+	+getBackground(): Graphics
+	+getInventory(): JTable
+	+getNeighborFields(): JTable
+	+getActions(): JTable
+	+getVirologists(): RadioButton
+	+reDraw()
+	+giveUserInput()
+}
+
+Canvas <... View
+Canvas ...> Controller
+Canvas ...> UserSelection
+
+class GUI {
+	-canvas: Canvas
+	{static} +main(args: String[0..*])
+}
+
+GUI ...> Canvas
+GUI ...> Controller
+
+@enduml

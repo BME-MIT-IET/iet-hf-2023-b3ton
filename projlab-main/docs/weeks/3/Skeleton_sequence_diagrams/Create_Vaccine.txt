@@ -1,0 +1,16 @@
+title Create Vaccine
+
+
+actor Tester
+Tester ->+ "v: Virologist" : createAgent(vg)
+"v: Virologist" ->+ "vg: VaccineGene" : getNucleotideCost()
+"vg: VaccineGene" -->- "v: Virologist" : n
+"v: Virologist" ->+ "vg: VaccineGene" : getAminoAcidCost()
+"vg: VaccineGene" -->- "v: Virologist" : m
+
+"v: Virologist" ->+ "vg: VaccineGene" : createAgent()
+"vg: VaccineGene" -->* "v: Vaccine" : <<create>>
+"vg: VaccineGene" -->- "v: Virologist" : v
+
+
+"v: Virologist" -->- Tester :

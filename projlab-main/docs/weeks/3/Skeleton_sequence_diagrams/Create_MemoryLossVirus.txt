@@ -1,0 +1,16 @@
+title Create MemoryLossVirus
+
+
+actor Tester
+Tester ->+ "v: Virologist" : createAgent(mg)
+"v: Virologist" ->+ "mg: MemoryLossVirusGene" : getNucleotideCost()
+"mg: MemoryLossVirusGene" -->- "v: Virologist" : n
+"v: Virologist" ->+ "mg: MemoryLossVirusGene" : getAminoAcidCost()
+"mg: MemoryLossVirusGene" -->- "v: Virologist" : m
+
+"v: Virologist" ->+ "mg: MemoryLossVirusGene" : createAgent()
+"mg: MemoryLossVirusGene" -->* "mv: MemoryLossVirus" : <<create>>
+"mg: MemoryLossVirusGene" -->- "v: Virologist" : mv
+
+
+"v: Virologist" -->- Tester :

@@ -1,0 +1,23 @@
+title Steal equipment
+
+
+actor Player
+Player ->+ "v1: Virologist" : stealFrom(v2)
+"v1: Virologist" ->+ "v2: Virologist" : getStolenBy(v1)
+
+loop e in effects
+    "v2: Virologist" ->+ "e: Effect" : paralyzed()
+    "e: Effect" -->- "v2: Virologist" : b1
+end
+
+opt b1 == true
+    "v2: Virologist" ->+ "v1: Virologist": addAminoAcid(amount)
+    "v1: Virologist" -->- "v2: Virologist" : remainingAminoAcid
+    "v2: Virologist" ->+ "v1: Virologist": addNucleotide(amount)
+    "v1: Virologist" -->- "v2: Virologist" : remainigNucleotide
+    "v2: Virologist" ->+ "v1: Virologist": addEquipment(eq)
+    "v1: Virologist" -->- "v2: Virologist" : b2
+end
+
+"v2: Virologist" -->- "v1: Virologist" : 
+"v1: Virologist" -->- Player : 

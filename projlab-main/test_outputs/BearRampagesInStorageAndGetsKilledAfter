@@ -1,0 +1,23 @@
+field created 0 infected-laboratory paralyzing-gene 
+field created 2 storage 60 40
+field created 3 field
+fields 0 2 connected
+fields 2 3 connected
+virologist created 4 
+virologist created 5
+determinism is set to true 
+virologist 4 placed on 0
+virologist 5 placed on 3
+equipment 7 added to virologist 5
+turn started for 4
+4 moved to 2
+turn started for 5
+on 3 virologists are 5
+neighbors are : 2
+5 moved to 2
+on 2 virologists are 5 4
+4 has: BearDanceEffect
+5 took action kill 4
+turn started for 5
+on 2 virologists are 5
+2 has: 0 aminoacid 0 nucleotide

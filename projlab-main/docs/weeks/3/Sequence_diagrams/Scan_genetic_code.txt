@@ -1,0 +1,10 @@
+title Scan genetic code
+
+
+actor Player
+Player ->+ "v: Virologist" : collectFromField()
+"v: Virologist" ->+ "l: Laboratory" : collectBy(v)
+"l: Laboratory" ->+ "v: Virologist" : addGeneticCode(gc)
+"v: Virologist" -->- "l: Laboratory" : notScannedBefore
+"l: Laboratory" -->- "v: Virologist" : b
+"v: Virologist"  -->- Player :

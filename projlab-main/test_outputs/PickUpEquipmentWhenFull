@@ -1,0 +1,11 @@
+field created 0 shelter axe 1
+0 has : 1
+virologist created 2
+virologist 2 placed on 0
+equipment 3 added to 2
+equipment 4 added to 2
+equipment 5 added to 2
+turn started for 2
+2 took action collect
+2 has : 3 4 5 
+0 has : 1

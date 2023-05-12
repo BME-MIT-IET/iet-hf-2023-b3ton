@@ -1,0 +1,9 @@
+create-field laboratory vaccine-gene
+create-virologist
+create-virologist
+place-virologist 1 0
+place-virologist 2 0
+add-agent 1 chorea-virus
+next-turn
+virologist-action use-agent 3 2
+get-effects 2

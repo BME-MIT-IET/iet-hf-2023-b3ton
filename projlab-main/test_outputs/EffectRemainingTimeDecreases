@@ -1,0 +1,9 @@
+field created 0 laboratory vaccine-gene
+field created 1 field
+fields 0 1 connected
+virologist created 2 
+virologist 2 placed on 0 
+effect chorea 1 added to 2
+turn started for 2 
+turn started for 2
+2 has : 

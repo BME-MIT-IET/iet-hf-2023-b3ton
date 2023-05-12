@@ -1,0 +1,12 @@
+title Scan_New_Genetic_Code
+
+
+actor Tester
+Tester ->+ "v: Virologist" : collectFromField()
+"v: Virologist" ->+ "l: Laboratory" : collectBy(v)
+"l: Laboratory" ->+ "v: Virologist" : addGeneticCode(gc)
+"v: Virologist" -->- "l: Laboratory" : true
+"l: Laboratory" -->- "v: Virologist" : b
+"v: Virologist"  -->- Tester :
+
+participant "gc: VaccineGene"

@@ -1,0 +1,8 @@
+title Use ChoreaVirus
+
+
+"v1: Virologist" ->+ "c: ChoreaVirus" : useOnBy(v2, v1)
+"c: ChoreaVirus" -->* "tce: TimedChoreaEffect" : <<create>>
+"c: ChoreaVirus" ->+ "v2: Virologist" : addEffectBy(tce, v1)
+"v2: Virologist" -->-  "c: ChoreaVirus" : added
+"c: ChoreaVirus" -->- "v1: Virologist" :

@@ -1,0 +1,5 @@
+title Effect MoreMaterial
+
+
+"v: Virologist" ->+  "e: Effect" : moreMaterial()
+"e: Effect" -->- "v: Virologist" : 1

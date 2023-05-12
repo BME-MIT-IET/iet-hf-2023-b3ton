@@ -1,0 +1,5 @@
+title BearDanceEffect HasChorea
+
+
+"v: Virologist" ->+  "e: BearDanceEffect" : hasChorea()
+"e: BearDanceEffect" -->- "v: Virologist" : true

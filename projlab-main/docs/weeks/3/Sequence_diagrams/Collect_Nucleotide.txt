@@ -1,0 +1,9 @@
+title Collect Nucleotide
+
+
+"s: Storage" ->+ "v: Virologist" : addNucleotide(amount)
+loop e in effects
+    "v: Virologist" ->+ "e: Effect" : moreMaterial()
+    "e: Effect" -->- "v: Virologist" : inventoryIncrease
+end
+"v: Virologist" -->- "s: Storage" : remaining

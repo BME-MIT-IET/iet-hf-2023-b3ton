@@ -1,0 +1,16 @@
+title Create ChoreaVirus
+
+
+actor Tester
+Tester ->+ "v: Virologist" : createAgent(cvg)
+"v: Virologist" ->+ "cvg: ChoreaVirusGene" : getNucleotideCost()
+"cvg: ChoreaVirusGene" -->- "v: Virologist" : n
+"v: Virologist" ->+ "cvg: ChoreaVirusGene" : getAminoAcidCost()
+"cvg: ChoreaVirusGene" -->- "v: Virologist" : m
+
+"v: Virologist" ->+ "cvg: ChoreaVirusGene" : createAgent()
+"cvg: ChoreaVirusGene" -->* "cv: ChoreaVirus" : <<create>>
+"cvg: ChoreaVirusGene" -->- "v: Virologist" : cv
+
+
+"v: Virologist" -->- Tester :

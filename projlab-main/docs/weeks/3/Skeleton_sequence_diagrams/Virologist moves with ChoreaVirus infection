@@ -1,0 +1,14 @@
+title Virologist moves with ChoreaVirus infection
+
+
+actor Tester
+Tester ->+ "v: Virologist" : yourTurn()
+"v: Virologist" ->+ "tce: TimedChoreaEffect" : hasChorea()
+"tce: TimedChoreaEffect" -->- "v: Virologist" : true
+"v: Virologist" ->+ "v: Virologist": moveTo(newField)
+"v: Virologist" ->+ "currentField: Field" : stepOut(v)
+"currentField: Field" -->- "v: Virologist" :
+"v: Virologist" ->+ "newField: Field" : stepIn(v)
+"newField: Field" -->- "v: Virologist" :
+"v: Virologist" -->- "v: Virologist":
+"v: Virologist" -->- Tester :

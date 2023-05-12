@@ -1,0 +1,233 @@
+
+\subsection{Lényeges use-case-ek}
+\subsubsection{Use-case leírások}
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve} & \textbf{View interface}                                                                                                               \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}  & A játékos megtekinti a játék felületét.                                                                                               \\
+	\hline
+	\textbf{Aktorok}       & Player                                                                                                                                \\
+	\hline
+	\textbf{Forgatókönyv}  & 1. A játékos megnézi az előző kör óta vele történt eseményeket.                                                                       \\
+	\hline
+	\textbf{Forgatókönyv}  & 2. A játékos megnézi a virológusa által elérhető pályát, és az elérhető virológusokat.                                                \\
+	\hline
+	\textbf{Forgatókönyv}  & 3. A játékos megnézi a virológusa által ismert genetikai kódokat, az rendelkezésre álló alapanyagokat, és a felhasználható ágenseket. \\
+	\hline
+	\textbf{Forgatókönyv}  & 4. A játékos megnézi a virológusán éppen aktív ágenseket.                                                                             \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve}           & \textbf{Move character
+	}                                                                                                              \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}            & A játékos a virológussal egy szomszédos mezőre lép.
+	\\
+	\hline
+	\textbf{Aktorok}                 & Player                                                                      \\
+	\hline
+	\textbf{Forgatókönyv}            & 1. A virológus a kezdő mezőről eltűnik.                                     \\
+	\hline
+	\textbf{Forgatókönyv}            & 2. A virológus a szomszéd mezőn megjelenik.                                 \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 2.A.1 Az új mező lehet egy szabad terület.                                  \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 2.B.1 Az új mező lehet egy laboratórium.                                    \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 2.C.1 Az új mező lehet egy raktár.                                          \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 2.D.1 Az új mező lehet egy óvóhely.                                         \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 2.E.1 Ha az új mezőn találhatóak másik virológusok, akkor találkozik velük. \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve}           & \textbf{Scan genetic code}                                                                          \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}            & A játékos a virológussal letapogatja a laboratórium falán lévő genetikai kódot.                     \\
+	\hline
+	\textbf{Aktorok}                 & Player                                                                                              \\
+	\hline
+	\textbf{Forgatókönyv}            & 1. A virológus letapogatja a genetikai kódot.                                                       \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.1 Ha a virológus eddig nem ismerte ezt a genetikai kódot, akkor a letapogatás után megtanulja.  \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.1.A.1 Ha a virológus az összes fellelhető genetikai kódot megtanulta, akkor megnyeri a játékot. \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.B.1 Ha a virológus már ismerte a genetikai kódot, akkor nem történik semmi.                       \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve}           & \textbf{Collect material}                                                                                                        \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}            & A játékos a virológussal összegyűjti a raktárban található alapanyagokat.                                                        \\
+	\hline
+	\textbf{Aktorok}                 & Player                                                                                                                           \\
+	\hline
+	\textbf{Forgatókönyv}            & 1. A virológus összegyűjti a raktárban található összes ott található alapanyagot.                                               \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.1 Ha a raktárban lévő alapanyag mennyisége több, mint amennyit a virológus még magánál tarthat, akkor a maradékot otthagyja. \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve}           & \textbf{Create agent}                                                                                                      \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}            & A játékos a virológussal létrehoz egy ágenst a genetikai kód alapján.                                                      \\
+	\hline
+	\textbf{Aktorok}                 & Player                                                                                                                     \\
+	\hline
+	\textbf{Forgatókönyv}            & 1. A játékos kiválasztja, hogy a virológus által ismert melyik genetikai kód alapján akar ágenst létrehozni.               \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.1 Ha a virológusnak rendelkezésére állnak az ágenshez szükséges alapanyagok, akkor szükséges anyagmennyiség levonódik. \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.2 Az ágens létrejön, és hatóideje a kezdőértékre állítódik.                                                            \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.B.1 Ha a virológusnak nem állnak rendelkezésére az ágenshez szükséges alapanyagok, akkor az ágenst nem tudja létrehozni. \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve} & \textbf{Use agent}                                                                                        \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}  & A játékos a virológussal felhasználja az egyik nála lévő ágenst.                                          \\
+	\hline
+	\textbf{Aktorok}       & Player                                                                                                    \\
+	\hline
+	\textbf{Forgatókönyv}  & 1. A játékos kiválasztja, hogy melyik ágenst akarja felhasználni.                                         \\
+	\hline
+	\textbf{Forgatókönyv}  & 2. A játékos kiválasztja, hogy melyik vele érintkező virológusra (vagy magára) akarja az ágenst felkenni. \\
+	\hline
+	\textbf{Forgatókönyv}  & 3. Az ágens elhasználódik, és kifejti a hatását a célpontra.                                              \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve}           & \textbf{Pick up equipment}                                                                                          \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}            & A játékos a virológussal felveszi a védőfelszerelést az óvóhelyről.                                                 \\
+	\hline
+	\textbf{Aktorok}                 & Player                                                                                                              \\
+	\hline
+	\textbf{Forgatókönyv}            & 1. A virológus felveszi a védőfelszerelést.                                                                         \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.1 Ha a virológuson nincs ilyen felszerelés, akkor a felszerelés az óvóhelyről eltűnik, és a virológushoz kerül. \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.B.1 Ha a virológuson van ilyen felszerelés, akkor a felszerelés az óvóhelyen marad.                               \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve}           & \textbf{Steal equipment}                                                                                                                                                   \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}            & A játékos a virológussal ellopja a másik virológus felszerelését.                                                                                                          \\
+	\hline
+	\textbf{Aktorok}                 & Player                                                                                                                                                                     \\
+	\hline
+	\textbf{Forgatókönyv}            & 1. A játékos kiválaszt egy másik virológust, akitől lopni próbál.                                                                                                          \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.1 Ha a célpont le van bénulva, akkor az egyik véletlenszerű védőfelszerelését megkapja és az elérhető alapanyagából is átvesz annyit, amennyi a készletében még elfér. \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.B.1 Ha a célpont nincs lebénulva, akkor nem történik semmi.                                                                                                              \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	\textbf{Use-case neve}           & \textbf{Control time}                                                          \\
+	\hline
+	\hline
+	\textbf{Rövid leírás}            & A kör végén telik az idő.                                                      \\
+	\hline
+	\textbf{Aktorok}                 & Controller                                                                     \\
+	\hline
+	\textbf{Forgatókönyv}            & 1. Az ágensek hatóideje eggyel csökken.                                        \\
+	\hline
+	\textbf{Alternatív Forgatókönyv} & 1.A.1 Ha valamelyik ágens hatóideje nullára csökken, akkor az ágens megszűnik. \\
+	\hline
+\end{tabularx}
+
+\bigskip
+
+%\noindent\begin{tabularx}{\textwidth}{|l|X|}
+%	\hline
+%	\textbf{Use-case neve} & \textbf{TODO} \\
+%	\hline
+%	\hline
+%	\textbf{Rövid leírás} & TODO \\
+%	\hline
+%	\textbf{Aktorok} & TODO \\
+%	\hline
+%	\textbf{Forgatókönyv} & 1. TODO \\
+%	\hline
+%	\textbf{Alternatív Forgatókönyv} & 1.A.1. TODO \\
+%	\hline
+%\end{tabularx}
+%
+%\bigskip
+
+
+\subsubsection{Use-case diagram}
+\begin{tikzpicture}
+
+	\umlusecase[name=a, x=1, width=2.5cm] {View interface}
+	\umlusecase[name=b, x=3, y=-1, width=2.5cm] {Move character}
+	\umlusecase[name=c, x=4.2, y=-3.3, width=2.8cm] {Scan genetic code}
+	\umlusecase[name=d, x=5, y=-5, width=2.5cm] {Collect material}
+	\umlusecase[name=e, x=5, y=-6, width=2.5cm] {Create agent}
+	\umlusecase[name=f, x=4, y=-7, width=2.5cm] {Use agent}
+	\umlusecase[name=g, x=3, y=-9, width=2.5cm] {Pick up equipment}
+	\umlusecase[name=h, x=1, y=-11, width=2.5cm] {Steal equipment}
+	\umlusecase[name=i, x=11,y=-6, width=2.5cm] {Control time}
+
+
+	\umlactor[y=-6] {Player}
+	\umlactor[x=16,y=-6] {Controller}
+
+	\umlassoc{Player}{a}
+	\umlassoc{Player}{b}
+	\umlassoc{Player}{c}
+	\umlassoc{Player}{d}
+	\umlassoc{Player}{e}
+	\umlassoc{Player}{f}
+	\umlassoc{Player}{g}
+	\umlassoc{Player}{h}
+	\umlassoc{Controller}{i}
+
+\end{tikzpicture}

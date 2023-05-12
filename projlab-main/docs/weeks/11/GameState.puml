@@ -1,0 +1,12 @@
+@startuml
+
+[*] --> WaitingForMove 
+WaitingForMove -> WaitingForAction 
+WaitingForAction --> WaitingForNextTurn 
+WaitingForNextTurn --> WaitingForMove
+WaitingForMove --> GameEnded : Controller.endGame()
+WaitingForAction --> GameEnded : Controller.endGame()
+WaitingForNextTurn --> GameEnded : Controller.endGame()
+GameEnded --> [*]
+
+@enduml

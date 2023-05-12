@@ -1,0 +1,14 @@
+title Use_ChoreaVirus_When_Protected_By_Vaccine
+
+"v1: Virologist" ->+ "c: ChoreaVirus" : useOnBy(v2, v1)
+"c: ChoreaVirus" -->* "tce: TimedChoreaEffect" : <<create>>
+"c: ChoreaVirus" ->+ "v2: Virologist" : addEffectBy(tce, v1)
+"v2: Virologist" ->+ "e: SackEquipment" : protected()
+"e: SackEquipment" -->- "v2: Virologist" : false
+"v2: Virologist" ->+ "e2: TimedProtectingEffect" : protected()
+"e2: TimedProtectingEffect" -->- "v2: Virologist" : true
+"v2: Virologist" -->-  "c: ChoreaVirus" : false
+"c: ChoreaVirus" -->- "v1: Virologist" :
+"e2: Vaccine" -->- "v2: Virologist" : true
+"v2: Virologist" -->-  "c: ChoreaVirus" : false
+"c: ChoreaVirus" -->- "v1: Virologist" :

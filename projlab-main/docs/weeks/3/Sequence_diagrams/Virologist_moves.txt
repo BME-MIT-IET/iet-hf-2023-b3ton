@@ -1,0 +1,12 @@
+title Virologist moves
+
+
+actor Player
+Player ->+ "v: Virologist": moveTo(newField)
+
+"v: Virologist" ->+ "currentField: Field" : stepOut(v)
+"currentField: Field" -->- "v: Virologist" :
+
+"v: Virologist" ->+ "newField: Field" : stepIn(v)
+"newField: Field" -->- "v: Virologist" :
+"v: Virologist" -->- Player :

@@ -1,0 +1,8 @@
+title Collect from Field
+
+
+actor Player
+Player ->+ "v: Virologist" : collectFromField()
+"v: Virologist" ->+ "f: Field" : collectBy(v)
+"f: Field" -->- "v: Virologist" : b
+"v: Virologist"  -->- Player :

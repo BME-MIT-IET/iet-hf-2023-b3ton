@@ -1,0 +1,21 @@
+@startuml User Input Use Drop Equipment
+title User Input Drop Equipment
+actor Player
+Player -> Canvas ++ : giveUserInput()
+Canvas -> Controller ++ : handleUserInput(1, 3, 5, 6, DropEquipment, gc)
+Controller -> Controller ++ : getVirologist(1)
+Controller --> Controller -- : v1
+Controller -> Controller ++ : getEquipment(6)
+Controller --> Controller -- : e
+Controller -> "currentVirologist : Virologist" ++ : dropEquipment(e)
+"currentVirologist : Virologist" --> Controller --
+Controller -> "gameState : GameState" ++ : nextState()
+"gameState : GameState" --> Controller -- : WaitingForNextTurn
+Controller -> FieldView ++ : draw()
+FieldView --> Controller --
+Controller -> VirologistView ++ : draw()
+VirologistView --> Controller --
+Controller --> Canvas --
+Canvas --> Player --
+participant "v1 : Virologist"
+@enduml

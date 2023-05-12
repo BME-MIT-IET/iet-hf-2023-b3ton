@@ -1,0 +1,5 @@
+title AxeEquipment lethal
+
+
+"v: Virologist" ->+  "e: AxeEquipment" : lethal()
+"e: AxeEquipment" -->- "v: Virologist" : true

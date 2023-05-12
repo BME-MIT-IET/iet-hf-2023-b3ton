@@ -1,0 +1,5 @@
+title SackEquipment MoreMaterial
+
+
+"v: Virologist" ->+  "se: SackEquipment" : moreMaterial()
+"se: SackEquipment" -->- "v: Virologist" : n

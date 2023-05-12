@@ -1,0 +1,17 @@
+@startuml Move to another Field
+
+title Move to another Field
+
+actor Tester as t
+participant "v: Virologist" as v
+participant "f1: Field" as f1
+participant "f2: Field" as f2
+
+t -> v ++ : moveTo(f2)
+    v -> f1 ++ : stepOut(v)
+    f1 --> v --
+    v -> f2 ++ : stepIn(v)
+    f2 --> v --
+v --> t --
+
+@enduml

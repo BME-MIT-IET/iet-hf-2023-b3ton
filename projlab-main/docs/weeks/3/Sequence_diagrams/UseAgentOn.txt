@@ -1,0 +1,12 @@
+title Use Agent
+
+
+actor Player
+Player ->+ "v1: Virologist" : useAgentOn(v2, a)
+"v1: Virologist" ->+ "a: Agent" : useOnBy(v2, v1)
+"a: Agent" -->* "e: Effect" : <<create>>
+"a: Agent" ->+ "v2: Virologist" : addEffectBy(e, v1)
+"v2: Virologist" -->-  "a: Agent" : added
+
+"a: Agent" -->- "v1: Virologist" : 
+"v1: Virologist" -->- Player :

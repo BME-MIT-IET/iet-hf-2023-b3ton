@@ -1,0 +1,7 @@
+create-field infected-laboratory chorea-gene
+create-field field
+connect-fields 0 2
+create-virologist
+place-virologist 3 0 
+next-turn
+get-current-field 3

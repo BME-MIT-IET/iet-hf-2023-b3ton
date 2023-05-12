@@ -1,0 +1,13 @@
+title Kill virologist
+
+actor Tester 
+Tester ->+ "v1: Virologist" : kill(v2)
+loop e in equipments
+"v1: Virologist" ->+ "e: Equipment" : lethal()
+"e: Equipment" -->- "v1: Virologist" : b
+end
+opt b == true
+"v1: Virologist" ->+ "v2: Virologist" : die()
+"v2: Virologist" -->- "v1: Virologist" :
+end
+"v1: Virologist" -->- Tester :

@@ -1,0 +1,12 @@
+field created 0 laboratory vaccine-gene
+field created 1 laboratory vaccine-gene
+fields 0 1 connected
+virologist created 2
+virologist 2 placed on 0
+turn started for 2
+    2 took action collect
+2 has : VaccineGene
+    2 moved to 1
+    turn started for 2
+    2 took action collect
+2 has : VaccineGene

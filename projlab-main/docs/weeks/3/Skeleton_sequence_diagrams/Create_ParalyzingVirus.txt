@@ -1,0 +1,16 @@
+title Create ParalyzingVirus
+
+
+actor Tester
+Tester ->+ "v: Virologist" : createAgent(pg)
+"v: Virologist" ->+ "pg: ParalyzingVirusGene" : getNucleotideCost()
+"pg: ParalyzingVirusGene" -->- "v: Virologist" : n
+"v: Virologist" ->+ "pg: ParalyzingVirusGene" : getAminoAcidCost()
+"pg: ParalyzingVirusGene" -->- "v: Virologist" : m
+
+"v: Virologist" ->+ "pg: ParalyzingVirusGene" : createAgent()
+"pg: ParalyzingVirusGene" -->* "pv: ParalyzingVirus" : <<create>>
+"pg: ParalyzingVirusGene" -->- "v: Virologist" : pv
+
+
+"v: Virologist" -->- Tester :

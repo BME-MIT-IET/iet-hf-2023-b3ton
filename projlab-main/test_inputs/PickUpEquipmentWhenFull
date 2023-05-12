@@ -1,0 +1,11 @@
+create-field shelter axe
+get-equipments-of-field 0
+create-virologist
+place-virologist 2 0
+add-equipment 2 sack 
+add-equipment 2 gloves
+add-equipment 2 white-coat
+next-turn
+virologist-action collect
+get-equipments 2
+get-equipments-of-field 0

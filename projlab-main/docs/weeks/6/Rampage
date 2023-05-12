@@ -1,0 +1,13 @@
+title Rampage
+
+"Storage: s" ->+ "v: Virologist": rampage()
+loop e in effects
+"v: Virologist" ->+ "e: Effect" : rampage()
+"e: Effect" -->- "v: Virologist" : b
+end
+opt b == true
+"v: Virologist" ->+ "Storage: s" : destroyObjects()
+"Storage: s" -->-  "v: Virologist" :
+end
+"v: Virologist" -->- "Storage: s" :
+

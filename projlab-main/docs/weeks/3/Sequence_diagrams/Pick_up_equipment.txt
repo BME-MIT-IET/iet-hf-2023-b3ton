@@ -1,0 +1,10 @@
+title Pick up equipment
+
+
+actor Player
+Player ->+ "v: Virologist" : collectFromField()
+"v: Virologist" ->+ "s: Shelter" : collectBy(v)
+"s: Shelter" ->+ "v: Virologist" : addEquipment(e)
+"v: Virologist" -->- "s: Shelter" : notFull
+"s: Shelter" -->- "v: Virologist" : b
+"v: Virologist" -->- Player :

@@ -1,0 +1,12 @@
+create-field laboratory vaccine-gene
+create-virologist
+create-virologist
+place-virologist 1 0
+place-virologist 2 0
+add-agent 2 memory-loss-virus
+next-turn
+virologist-action collect
+next-turn
+get-genetic-codes 1
+virologist-action use-agent 3 1
+get-genetic-codes 1

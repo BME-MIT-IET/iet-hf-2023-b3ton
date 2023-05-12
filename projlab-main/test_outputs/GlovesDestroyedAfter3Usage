@@ -1,0 +1,14 @@
+field created 0 laboratory vaccine-gene
+virologist created 1
+virologist created 2
+virologist 1 placed on 0 
+virologist 2 placed on 0 
+equipment 3 added to 1
+equipment 4 added to 2
+agent 5 added to 2
+turn started for 1
+turn started for 2
+2 has : 5
+2 took action use-agent 5 1
+1 has :
+2 has : 4

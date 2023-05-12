@@ -1,0 +1,80 @@
+create-field field 
+create-field laboratory chorea-gene
+create-field shelter axe
+create-field laboratory vaccine-gene
+create-field field 
+create-field shelter white-coat
+create-field shelter gloves
+create-field infected-laboratory paralyzing-gene
+create-field field 
+connect-fields 0 1
+connect-fields 1 2
+connect-fields 4 5
+connect-fields 5 6 
+connect-fields 8 10
+connect-fields 10 12
+connect-fields 0 4
+connect-fields 1 5
+connect-fields 2 6 
+connect-fields 4 8
+connect-fields 5 10
+connect-fields 6 12
+create-virologist
+create-virologist
+create-virologist
+determinism true
+place-virologist 13 0 
+place-virologist 14 5
+place-virologist 15 12
+add-material 13 10 10
+add-material 14 10 10
+add-material 15 10 10
+add-equipment 13 axe
+add-effect 14 chorea 3
+add-equipment 15 gloves
+next-turn
+get-neighbor-fields 0
+virologist-moves 1
+get-virologists 1
+get-genetic-codes 13
+virologist-action collect
+get-genetic-codes 13
+next-turn
+virologist-moves 4
+get-genetic-codes 14
+virologist-action collect
+get-genetic-codes 14
+next-turn
+get-neighbor-fields 12
+virologist-moves 10
+get-effects 15 
+get-virologists 10
+get-genetic-codes 15
+virologist-action collect
+get-genetic-codes 15
+next-turn
+get-virologists 1
+virologist-action create-agent chorea-gene
+get-agents 13
+next-turn
+virologist-moves 5
+get-virologists 5
+get-agents 14
+virologist-action create-agent vaccine-gene
+get-agents 14
+next-turn
+get-virologists 10
+virologist-moves 5
+get-virologists 5
+virologist-action create-agent paralyzing-gene
+get-agents 15
+next-turn
+get-virologists 1
+virologist-moves 5
+get-virologists 5
+virologist-action kill 14
+get-virologists 5
+next-turn
+get-virologists 5
+get-agents 15
+virologist-action use-agent 22 13
