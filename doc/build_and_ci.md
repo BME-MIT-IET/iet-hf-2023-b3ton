@@ -40,3 +40,12 @@ tasks.withType(JavaCompile) {
 ```
 
 Ezt követően sikeresen futott már a projekt a `.\gradlew`, majd pedig a `.\gradlew run` parancsok kiadását követően.
+
+## GitHub Actions beüzemelése
+
+A **Continuous Integration (CI)** megoldására a `GitHub Actions` lehetőséget választottuk, mivel ezt ismerjük már korábbról.
+A `Gradle` beüzemelését követően a verziókezelő honlapján az _Actions_ fülre kattintva, 
+ott pedig a _Java with Gradle_ opciót választva megkaphattuk a kiindulási .yml fájlt.
+
+Ezt nagyrészt változatlanul hagytam, azonban beállítottam benne a cache opcióját a `cache: 'gradle'` sorral. 
+Ennek köszönhetően a Pull Request-ek esetében le fog futni ez az alapvető Action.
