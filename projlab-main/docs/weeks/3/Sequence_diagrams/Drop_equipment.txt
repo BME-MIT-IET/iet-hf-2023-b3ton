@@ -1,0 +1,6 @@
+title Drop equipment
+
+
+actor Player
+Player ->+ "v: Virologist" : dropEquipment(e)
+"v: Virologist" -->- Player : 

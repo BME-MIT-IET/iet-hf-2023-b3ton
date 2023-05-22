@@ -1,0 +1,6 @@
+title Create ChoreaVirus
+
+
+"v: Virologist" ->+ "c: ChoreaVirusGene" : createAgent()
+"c: ChoreaVirusGene" -->* "cv: ChoreaVirus" : <<create>>
+"c: ChoreaVirusGene" -->- "v: Virologist" : cv

@@ -1,0 +1,9 @@
+create-field storage 60 40
+get-material-of-field 0
+create-virologist
+place-virologist 1 0
+add-equipment 1 sack
+next-turn
+virologist-action collect
+get-material 1
+get-material-of-field 0

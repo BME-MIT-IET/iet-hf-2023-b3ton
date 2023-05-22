@@ -1,0 +1,9 @@
+@startuml Agent states
+
+title Agent states
+
+[*] --> Usable
+Usable -> Decomposed: timePassed():true
+Usable -> Usable : timePassed():false
+Decomposed --> [*]
+@enduml

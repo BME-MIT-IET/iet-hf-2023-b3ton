@@ -1,0 +1,5 @@
+title Equipment removable
+
+
+"v: Virologist" ->+  "e: Equipment" : removable()
+"e: Equipment" -->- "v: Virologist" : false

@@ -1,0 +1,14 @@
+create-field laboratory vaccine-gene
+create-virologist
+create-virologist
+place-virologist 1 0
+place-virologist 2 0
+add-equipment 1 gloves
+add-equipment 2 gloves
+add-agent 2 chorea-virus
+next-turn
+next-turn
+get-agents 2
+virologist-action use-agent 5 1
+get-equipments 1
+get-equipments 2

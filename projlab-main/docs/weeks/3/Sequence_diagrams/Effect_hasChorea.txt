@@ -1,0 +1,5 @@
+title Effect HasChorea
+
+
+"v: Virologist" ->+  "e: Effect" : hasChorea()
+"e: Effect" -->- "v: Virologist" : false

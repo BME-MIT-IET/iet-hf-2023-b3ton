@@ -1,0 +1,17 @@
+title Create agent
+
+
+actor Player
+Player ->+ "v: Virologist" : createAgent(gc)
+"v: Virologist" ->+ "gc: GeneticCode" : getNucleotideCost()
+"gc: GeneticCode" -->- "v: Virologist" : n
+"v: Virologist" ->+ "gc: GeneticCode" : getAminoAcidCost()
+"gc: GeneticCode" -->- "v: Virologist" : m
+
+opt nucleotide >= n && aminoAcid >= m
+    "v: Virologist" ->+ "gc: GeneticCode" : createAgent()
+    "gc: GeneticCode" -->* "a: Agent" : <<create>>
+    "gc: GeneticCode" -->- "v: Virologist" : a
+end
+
+"v: Virologist" -->- Player :

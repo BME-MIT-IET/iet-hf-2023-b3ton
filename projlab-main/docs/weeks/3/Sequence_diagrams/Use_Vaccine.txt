@@ -1,0 +1,8 @@
+title Use Vaccine
+
+
+"v1: Virologist" ->+ "va: Vaccine" : useOnBy(v2, v1)
+"va: Vaccine" -->* "tpe: TimedProtectingEffect" : <<create>>
+"va: Vaccine" ->+ "v2: Virologist" : addEffect(tpe, v1)
+"v2: Virologist" -->-  "va: Vaccine" : added
+"va: Vaccine" -->- "v1: Virologist" :

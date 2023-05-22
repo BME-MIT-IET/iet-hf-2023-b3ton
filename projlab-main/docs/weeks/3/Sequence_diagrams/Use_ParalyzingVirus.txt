@@ -1,0 +1,8 @@
+title Use ParalyzingVirus
+
+
+"v1: Virologist" ->+ "p: ParalyzingVirus" : useOnBy(v2, v1)
+"p: ParalyzingVirus" -->* "tpe: TimedParalyzingEffect" : <<create>>
+"p: ParalyzingVirus" ->+ "v2: Virologist" : addEffect(tpe, v1)
+"v2: Virologist" -->-  "p: ParalyzingVirus" : added
+"p: ParalyzingVirus" -->- "v1: Virologist" :

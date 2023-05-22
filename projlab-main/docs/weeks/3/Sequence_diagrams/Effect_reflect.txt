@@ -1,0 +1,5 @@
+title Effect Reflect
+
+
+"v: Virologist" ->+  "e: Effect" : reflect()
+"e: Effect" -->- "v: Virologist" : false

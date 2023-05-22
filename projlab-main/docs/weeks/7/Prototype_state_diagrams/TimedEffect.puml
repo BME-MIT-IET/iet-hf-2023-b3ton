@@ -1,0 +1,9 @@
+@startuml TimedEffect states
+
+title TimedEffect states
+
+[*] --> Active
+Active -> Inactive: timePassed():true
+Active -> Active : timePassed():false
+Inactive --> [*]
+@enduml

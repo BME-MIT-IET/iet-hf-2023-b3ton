@@ -1,0 +1,9 @@
+create-field laboratory vaccine-gene
+create-field field
+connect-fields 0 1
+create-virologist
+place-virologist 2 0
+add-effect 2 chorea 1
+next-turn
+next turn
+get-effects 2

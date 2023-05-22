@@ -1,0 +1,12 @@
+title PickUp_Equpiment_When_Not_Full
+
+
+actor Tester
+Tester ->+ "v: Virologist" : collectFromField()
+"v: Virologist" ->+ "s: Shelter" : collectBy(v)
+"s: Shelter" ->+ "v: Virologist" : addEquipment(e)
+"v: Virologist" -->- "s: Shelter" : true
+"s: Shelter" -->- "v: Virologist" : b
+"v: Virologist" -->- Tester :
+
+participant "e: SackEquipment"

@@ -1,0 +1,6 @@
+title Create Vaccine
+
+
+"v: Virologist" ->+ "vg: VaccineGene" : createAgent()
+"vg: VaccineGene" -->* "va: Vaccine" : <<create>>
+"vg: VaccineGene" -->- "v: Virologist" : va

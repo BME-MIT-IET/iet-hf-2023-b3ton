@@ -1,0 +1,6 @@
+title Create ParalyzingVirus
+
+
+"v: Virologist" ->+ "p: ParalyzingVirusGene" : createAgent()
+"p: ParalyzingVirusGene" -->* "pv: ParalyzingVirus" : <<create>>
+"p: ParalyzingVirusGene" -->- "v: Virologist" : pv

@@ -1,0 +1,7 @@
+title Step In Infected Laboratory
+
+"v: Virologist" ->+ "il: InfectedLaboratory" : stepIn(v)
+"il: InfectedLaboratory" ->+ "virus: BearDanceVirus" : useOnBy(v,v)
+"virus: BearDanceVirus" -->- "il: InfectedLaboratory" : 
+"il: InfectedLaboratory" -->- "v: Virologist" :
+

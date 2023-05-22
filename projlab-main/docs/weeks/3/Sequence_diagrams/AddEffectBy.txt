@@ -1,0 +1,26 @@
+title Add Effect
+
+
+
+"a: Agent" ->+ "v1: Virologist" : addEffectBy(ef,v2)
+
+
+loop e in effects
+    "v1: Virologist" ->+  "e: Effect" : protected()
+    "e: Effect" -->- "v1: Virologist" : b1
+end
+
+opt b1 == false
+loop e in effects
+     "v1: Virologist" ->+  "e: Effect" : reflect()
+    "e: Effect" -->- "v1: Virologist" : b2
+end
+end
+
+opt b1 == false && b2 == true
+    "v1: Virologist" ->+  "v2: Virologist" : addEffectBy(ef, v1)
+    "v2: Virologist" -->- "v1: Virologist" : b3
+end
+"v1: Virologist" -->-  "a: Agent" : !b1 && !b2
+
+participant "ef: Effect"

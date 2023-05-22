@@ -1,0 +1,239 @@
+@startuml osztalydiagram
+class Virologist{
+	-baseMaxMaterial: int {readonly}
+	-nucleotide: int
+	-aminoAcid: int
+	+moveTo(f: Field): void
+	+collectFromField(): void
+	+createAgent(gc: GeneticCode): void
+	+useAgentOn(v: Virologist, a: Agent): void
+	+stealFrom(v: Virologist): void
+	+getStolenBy(v: Virologist): void
+	+kill(v: Virologist): void
+	+die(): void
+	+rampage(): void
+	+addGeneticCode(gc: GeneticCode): boolean
+	+forgetGeneticCodes(): void
+	+addEffectBy(e: Effect, v: Virologist): boolean
+	+addEquipment(e: Equipment): boolean
+	+dropEquipment(e: Equipment): void
+	+addAminoAcid(amount: int): int
+	+addNucleotide(amount: int): int
+	+yourTurn(): void
+}
+
+class Field{
+	+stepIn(v: Virologist): void 
+	+stepOut(v: Virologist): void
+	+spreadAgentBy(a: Agent, by: Virologist): void
+	+destroyObjects();
+	+collectBy(v: Virologist): boolean
+	+getVirologists(): Set<Virologis>
+}
+
+class Laboratory{
+	+collectBy(v: Virologist): boolean
+}
+
+Laboratory  o--- "-geneticCode 1" GeneticCode
+
+class InfectedLaboratory {
+	+stepIn(v: Virologist): void
+}
+
+Laboratory <|--- InfectedLaboratory
+InfectedLaboratory *--- BearDanceVirus
+
+class Storage{
+	+stepIn(v: Virologist): void
+	-nucleotideStored: int
+	-aminoAcidStored: int
+	+destroyObjects();
+	+collectBy(v: Virologist): boolean
+}
+
+class Shelter{
+	+collectBy(v: Virologist): boolean
+}
+
+Field "-currentField 1" --- " #virologists 0..*" Virologist
+Field o--- "-neighbourFields 0..*" Field
+Field <|--- Laboratory
+Field <|--- Storage
+Field <|--- Shelter
+
+abstract class Equipment{
+	+lethal(): boolean
+}
+
+class WhiteCoatEquipment{
+	+resist(): boolean
+}
+class SackEquipment{
+	+moreMaterial(): double
+}
+class GlovesEquipment{
+	-uses: int 
+	+reflect(): boolean
+	+removable(): boolean
+}
+class AxeEquipment{ 
+	+lethal(): boolean
+}
+
+Equipment <|--- WhiteCoatEquipment
+Equipment <|--- SackEquipment
+Equipment <|--- GlovesEquipment
+Equipment <|--- AxeEquipment
+Equipment "-equipment 0..1" o--- Shelter
+
+abstract class GeneticCode{
+	#aminoAcidCost: int {readonly} 
+	#nucleotideCost: int {readonly}
+	+getNucleotideCost(): int
+	+getAminoAcidCost(): int
+	{abstract} +createAgent(): Agent
+}
+class VaccineGene <<singleton>> {
+	{static} +getInstance(): VaccineGene
+	+createAgent(): Vaccine
+}
+
+VaccineGene "{static} -only_instance 0..1" *--- VaccineGene
+
+class ParalyzingVirusGene <<singleton>> {
+	{static} +getInstance(): ParalyzingVirusGene
+	+createAgent(): ParalyzingVirus
+}
+
+ParalyzingVirusGene "{static} -only_instance 0..1" *--- ParalyzingVirusGene
+
+class ChoreaVirusGene <<singleton>> {
+	{static} +getInstance(): ChoreaVirusGene
+	+createAgent(): ChoreaVirus
+}
+
+ChoreaVirusGene "{static} -only_instance 0..1" *--- ChoreaVirusGene
+
+class MemoryLossVirusGene <<singleton>> {
+	{static} +getInstance(): MemoryLossVirusGene
+	+createAgent(): MemoryLossVirus
+}
+
+MemoryLossVirusGene "{static} -only_instance 0..1" *--- MemoryLossVirusGene
+
+GeneticCode <|--- VaccineGene
+GeneticCode <|--- ParalyzingVirusGene
+GeneticCode <|--- ChoreaVirusGene
+GeneticCode <|--- MemoryLossVirusGene
+
+interface Timed {
+	{abstract} +timePasses(): boolean
+}
+
+abstract class Agent {
+	{static} #decomposeTime: int {readonly}
+	#timeLeft: int
+	+timePasses(): boolean
+	{abstract} +useOnBy(on: Virologist, by: Virologist): void
+}
+
+Timed <|... Agent
+
+class Vaccine{
+	+useOnBy(on: Virologist, by: Virologist): void
+}
+class ParalyzingVirus{
+	+useOnBy(on: Virologist, by: Virologist): void
+}
+class ChoreaVirus{
+	+useOnBy(on: Virologist, by: Virologist): void
+}
+class BearDanceVirus{
+	+useOnBy(on: Virologist, by: Virologist): void
+}
+class MemoryLossVirus{
+	+useOnBy(on: Virologist, by: Virologist): void
+}
+
+Agent <|--- Vaccine
+Agent <|--- ParalyzingVirus
+Agent <|--- ChoreaVirus
+Agent <|--- BearDanceVirus
+Agent <|--- MemoryLossVirus
+Agent <.. GeneticCode
+Agent <... Field
+
+Vaccine <.. VaccineGene
+ParalyzingVirus <.. ParalyzingVirusGene
+ChoreaVirus <.. ChoreaVirusGene
+MemoryLossVirus <.. MemoryLossVirusGene
+
+abstract class Effect {
+	+resist(): boolean
+	+paralyzed(): boolean
+	+hasChorea(): boolean
+	+moreMaterial(): double
+	+reflect(): boolean
+	+rampage(): boolean
+	+spreads(): Agent
+	+removable(): boolean
+}
+
+class BearDanceEffect {
+	+hasChorea(): boolean
+	+rampage(): boolean
+	+spreads(): Agent
+}
+
+Effect <|--- BearDanceEffect
+
+abstract class TimedEffect{
+	#timeLeft: int
+	+TimedEffect(timeLeft: int)
+	+timePasses(): boolean
+}
+
+Timed <|... TimedEffect
+
+class TimedParalyzingEffect{
+	+TimedParalyzingEffect(timeLeft: int)
+	+paralyzed(): boolean
+}
+class TimedProtectingEffect{
+	+TimedProtectingEffect(timeLeft: int)
+	+resist(): boolean
+}
+class TimedChoreaEffect{
+	+TimedChoreaEffect(timeLeft: int)
+	+hasChorea(): boolean
+}
+class TimedMemoryLossEffect{
+	+TimedMemoryLossEffect(timeLeft: int)
+}
+
+Virologist o--- "-geneticCodes 0..*" GeneticCode
+Virologist *--- "-effects 0..*" Effect
+Virologist *--- "-agents 0..*" Agent
+Virologist *--- "-equipments 0..3" Equipment
+Virologist <.. Storage
+Virologist <.. Laboratory
+Virologist <.. Shelter
+Virologist <.. Agent
+
+TimedEffect <|--- TimedParalyzingEffect
+TimedEffect <|--- TimedProtectingEffect
+TimedEffect <|--- TimedChoreaEffect
+TimedEffect <|--- TimedMemoryLossEffect
+
+Effect <|--- TimedEffect
+Effect <|--- Equipment
+
+Effect <... Agent
+TimedMemoryLossEffect <... MemoryLossVirus
+TimedParalyzingEffect <... ParalyzingVirus
+TimedProtectingEffect <... Vaccine
+TimedChoreaEffect <... ChoreaVirus
+BearDanceEffect <... BearDanceVirus
+
+@enduml

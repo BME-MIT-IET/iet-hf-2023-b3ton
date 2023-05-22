@@ -1,0 +1,8 @@
+field created 0 infected-laboratory paralyzing-gene 
+field created 2 field
+fields 0 2 connected
+virologist created 3
+virologist 3 placed on 2
+turn started for 3
+3 moved to 0
+3 has : BearDanceEffect

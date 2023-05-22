@@ -1,0 +1,22 @@
+field created 0 infected-laboratory chorea-gene
+field created 2 field 
+fields 0 2 connected
+virologist created 3
+virologist created 4
+virologist created 5
+determinism is set to true
+virologist 3 placed on 0
+virologist 4 placed on 2
+virologist 5 placed on 2
+effect protecting 10 added to 5
+equipment 7 added to 5
+turn started for 3
+3 moved to 2
+turn started for 4
+turn started for 5
+on 2 virologists are 3 4 5
+3 has : BearDanceEffect
+4 has : BearDanceEffect
+5 has : TimedProtectingEffect
+5 took action kill 3
+turn started for 4

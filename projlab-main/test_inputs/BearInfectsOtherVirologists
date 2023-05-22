@@ -1,0 +1,17 @@
+create-field infected-laboratory chorea-gene
+create-field field 
+connect-fields 0 2
+create-virologist
+place-virologist 3 2
+next-turn
+virologist-moves 0
+create-virologist
+create-virologist
+place-virologist 5 2
+place-virologist 6 2
+next-turn
+next-turn
+next-turn
+virologist-moves 2
+get-effects 5
+get-effects 6

@@ -1,0 +1,12 @@
+title Use_ChoreaVirus
+
+
+"v1: Virologist" ->+ "c: ChoreaVirus" : useOnBy(v2, v1)
+"c: ChoreaVirus" -->* "tce: TimedChoreaEffect" : <<create>>
+"c: ChoreaVirus" ->+ "v2: Virologist" : addEffectBy(tce, v1)
+"v2: Virologist" ->+ "e: SackEquipment" : protected()
+"e: SackEquipment" -->- "v2: Virologist" : false
+"v2: Virologist" ->+ "e: SackEquipment" : reflect()
+"e: SackEquipment" -->- "v2: Virologist" : false
+"v2: Virologist" -->-  "c: ChoreaVirus" : true
+"c: ChoreaVirus" -->- "v1: Virologist" :

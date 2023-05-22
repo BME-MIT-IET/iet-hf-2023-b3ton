@@ -1,0 +1,5 @@
+title GlovesEquipment Reflect
+
+
+"v: Virologist" ->+  "ge: GlovesEquipment" : reflect()
+"ge: GlovesEquipment" -->- "v: Virologist" : true

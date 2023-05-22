@@ -1,0 +1,15 @@
+create-field shelter axe
+create-virologist 
+place-virologist 2 0 
+create-field field 
+connect-fields 0 3
+create-virologist 
+place-virologist 4 3
+next-turn
+virologist-action collect
+next-turn
+next-turn
+virologist-moves 3
+virologist-action kill 4
+next-turn
+next-turn

@@ -1,0 +1,11 @@
+field created 0 infected-laboratory chorea-gene 
+field created 2 storage 10 10 
+2 has : 10 aminoacid 10 nucleotide
+fields 0 2 connected
+virologist created 3
+virologist 3 placed on 2
+turn started for 3
+3 moved to 0
+turn started for 3
+3 moved to 2
+2 has : 0 aminoacid 0 nucleotide 

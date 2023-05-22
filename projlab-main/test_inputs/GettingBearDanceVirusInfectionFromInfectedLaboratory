@@ -1,0 +1,8 @@
+create-field infected-laboratory paralyzing-gene
+create-field field
+connect-fields 0 2
+create-virologist
+place-virologist 3 2
+next-turn
+virologist-moves 0
+get-effects 3

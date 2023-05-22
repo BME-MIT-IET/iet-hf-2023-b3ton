@@ -1,0 +1,25 @@
+title Steal equipment from paralyzed Virologist
+
+
+actor Tester
+Tester ->+ "v1: Virologist" : stealFrom(v2)
+"v1: Virologist" ->+ "v2: Virologist" : getStolenBy(v1)
+
+"v2: Virologist" ->+ "e1: TimedChoreaEffect" : paralyzed()
+"e1: TimedChoreaEffect" -->- "v2: Virologist" : false
+
+"v2: Virologist" ->+ "e2: TimedParalyzingEffect" : paralyzed()
+"e2: TimedParalyzingEffect" -->- "v2: Virologist" : true
+
+
+
+"v2: Virologist" ->+ "v1: Virologist": addAminoAcid(amount)
+"v1: Virologist" -->- "v2: Virologist" : remainingAminoAcid
+"v2: Virologist" ->+ "v1: Virologist": addNucleotide(amount)
+"v1: Virologist" -->- "v2: Virologist" : remainigNucleotide
+"v2: Virologist" ->+ "v1: Virologist": addEquipment(eq)
+"v1: Virologist" -->- "v2: Virologist" : b2
+
+
+"v2: Virologist" -->- "v1: Virologist" : 
+"v1: Virologist" -->- Tester : 

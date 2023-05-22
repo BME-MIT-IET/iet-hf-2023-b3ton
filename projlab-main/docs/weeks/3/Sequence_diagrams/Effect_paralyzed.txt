@@ -1,0 +1,5 @@
+title Effect Paralyzed
+
+
+"v: Virologist" ->+  "e: Effect" : paralyzed()
+"e: Effect" -->- "v: Virologist" : false

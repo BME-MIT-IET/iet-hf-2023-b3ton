@@ -1,0 +1,80 @@
+field created 0 field
+field created 1 laboratory chorea-gene
+field created 2 shelter axe 3
+field created 4 laboratory vaccine-gene 
+field created 5 field
+field created 6 shelter white-coat 7
+field created 8 shelter gloves 9
+field created 10 infected-laboratory paralyzing-gene
+field created 12 field
+fields 0 1 connected
+fields 1 2 connected
+fields 4 5 connected
+fields 5 6 connected
+fields 8 10 connected
+fields 10 12 connected
+fields 0 4 connected
+fields 1 5 connected
+fields 2 6 connected
+fields 4 8 connected
+fields 5 10 connected
+fields 6 12 connected
+virologist created 13
+virologist created 14
+virologist created 15
+determinism is set to true
+virologist 13 placed on 0
+virologist 14 placed on 5
+virologist 15 placed on 12
+material added to 13 10 10
+material added to 14 10 10
+material added to 15 0 10
+equipment 16 added to virologist 13
+effect chorea 3 added to 14
+equipment 17 added to virologist 15
+turn started for 13
+neighbor fields are 1 4
+13 moved to 1
+on 1 virologists are 13
+13 has : 
+13 took action collect
+13 has : ChoreaVirusGene
+turn started for 14
+14 moved to 4
+14 has : 
+14 took action collect
+14 has : VaccineGene
+turn started for 15
+neighbor field are 10 6 
+15 moved to 10 
+15 has : BearDanceEffect
+on 10 virologists are 15
+15 has : 
+15 took action collect
+15 has : ParalyzingVirusGene
+turn started for 13
+on 1 virologists are 13
+13 took action create-agent 19
+13 has : 19
+turn started for 14
+14 moved to 5
+on 5 virologists are 14
+14 has :
+14 took action create-agent 20
+14 has : 20
+turn started for 15
+on 10 virologists are 15
+15 moved to 5
+on 5 virologists are 15 14
+15 took action create-agent 22
+15 has : 22
+turn started for 13
+on 1 virologists are 13
+13 moved to 5
+on 5 virologists are 15 13 14
+13 took action kill 14
+on 5 virologists are 15 13
+turn started for 15
+on 5 virologists are 13 15
+15 has : 22
+15 took action use-agent 22 13 

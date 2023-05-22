@@ -1,0 +1,23 @@
+@startuml Draw Virologist
+title Draw Virologist
+Controller -> VirologistView ++ : draw()
+VirologistView -> "virologist : Virologist" ++ : getAminoAcid()
+"virologist : Virologist" --> VirologistView -- : int
+VirologistView -> "virologist : Virologist" ++ : getNucleotide()
+"virologist : Virologist" --> VirologistView -- : int
+VirologistView -> "virologist : Virologist" ++ : getGeneticCodes()
+"virologist : Virologist" --> VirologistView -- : GeneticCode[0..*]
+VirologistView -> "virologist : Virologist" ++ : getAgents()
+"virologist : Virologist" --> VirologistView -- : Agent[0..*]
+VirologistView -> "virologist : Virologist" ++ : getEquipments()
+"virologist : Virologist" --> VirologistView -- : Equipment[0..*]
+VirologistView -> "virologist : Virologist" ++ : getEffects()
+"virologist : Virologist" --> VirologistView -- : Effect[0..*]
+VirologistView -> Canvas ++ : getInventory()
+Canvas --> VirologistView -- : JTable
+VirologistView -> Canvas ++ : getActions()
+Canvas --> VirologistView -- : JTable
+VirologistView -> Canvas ++ : reDraw()
+Canvas --> VirologistView --
+VirologistView --> Controller --
+@enduml

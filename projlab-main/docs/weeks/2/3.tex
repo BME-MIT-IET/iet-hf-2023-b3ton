@@ -1,0 +1,484 @@
+
+\newcounter{magicsorszam}
+
+\newcommand\azonosito{\stepcounter{magicsorszam}R\padzeroes[2]{\decimal{magicsorszam}}}
+
+
+\subsection{Követelmények}
+
+\subsubsection{Funkcionális követelmények}
+
+\noindent\begin{xltabular}{\textwidth}{| X | p{4cm} | p{2cm} | p{1.8cm} | p{1.3cm} | p{2cm} | X |}
+	\hline
+	\textbf{Azonosító} &
+	\textbf{Leírás} &
+	\textbf{Ellenőrzés} &
+	\textbf{Prioritás} &
+	\textbf{Forrás} &
+	\textbf{Use-case} &
+	\textbf{Komment} \\
+	\hline
+	\hline
+
+	\azonosito &
+	A játékot humán játékosok játszhatják. &
+	bemutatás &
+	fontos &
+	csapat &
+	View interface, Move character, Scan genetic code, Collect material, Create agent, Use agent, Pick up equipment, Steal equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	A játékot egyszerre többen játszhatják. &
+	bemutatás &
+	fontos &
+	csapat &
+	View interface, Move character, Scan genetic code, Collect material, Create agent, Use agent, Pick up equipment, Steal equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	Akár egy résztvevő is indíthat játékot. &
+	bemutatás és kiértékelés &
+	opcionális &
+	csapat &
+	View interface &
+	- \\
+	\hline
+
+	\azonosito &
+	Minden játékoshoz tartozik egy karakter, akit irányíthat. &
+	bemutatás &
+	fontos &
+	csapat &
+	View interface, Move character, Scan genetic code, Collect material, Create agent, Use agent, Pick up equipment, Steal equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	A játék körökre van osztva. &
+	bemutatás &
+	fontos &
+	csapat &
+	Control time &
+	- \\
+	\hline
+
+	\azonosito &
+	A játékosok egymás után kerülnek sorra egy a játék elején meghatározott sorrendben. &
+	bemutatás &
+	fontos &
+	csapat &
+	Control time &
+	- \\
+	\hline
+
+	\azonosito &
+	Egy körben egy játékos két dolgot tehet: mozgás és akció. &
+	bemutatás &
+	fontos &
+	csapat &
+	View interface, Move character, Scan genetic code, Collect material, Create agent, Use agent, Pick up equipment, Steal equipment, Control time &
+	- \\
+	\hline
+
+	\azonosito &
+	Mozgás: választhat a jelenlegi mezőjével szomszédosak közül, hogy melyikre szeretne lépni. &
+	bemutatás &
+	alapvető &
+	csapat &
+	View interface, Move character &
+	- \\
+	\hline
+
+	\azonosito &
+	Mozogni nem kötelező. &
+	bemutatás &
+	opcionális &
+	csapat &
+	View interface, Move character &
+	- \\
+	\hline
+
+	\azonosito &
+	Mozgás után lehetősége van legfeljebb egy akciót végrehajtani az alábbiak közül: genetikai kód letapogatása, anyag begyűjtése, védőfelszerelés felvétele, ágens elkészítése,  ágens felhasználása, lopás. &
+	bemutatás &
+	fontos &
+	csapat &
+	View interface, Scan genetic code, Collect material, Create agent, Use agent, Pick up equipment, Steal equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	Az anyagnak két típusát különböztetjük meg: aminosav és nukleotid. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Collect material &
+	- \\
+	\hline
+
+	\azonosito &
+	Anyagok raktár mezőkön gyűjthetők össze. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Collect material &
+	- \\
+	\hline
+
+	\azonosito &
+	Az Anyag begyűjtése akciót választva lehet anyagot felvenni, amennyiben az adott raktár területén található anyag. &
+	bemutatás &
+	fontos &
+	csapat &
+	View interface,Collect material &
+	- \\
+	\hline
+
+	\azonosito &
+	Egy virológusnál egyszerre csak bizonyos mennyiségű anyag lehet. &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Collect material &
+	- \\
+	\hline
+
+	\azonosito &
+	Ha a birtokolt anyag mennyiség eléri a korlátot, a virológus nem gyűjthet be több anyagot &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Collect material &
+	- \\
+	\hline
+
+	\azonosito &
+	Az ágensek is kétfélék lehetnek: vírusok vagy vakcinák. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Create agent, Use agent &
+	- \\
+	\hline
+
+	\azonosito &
+	A genetikai kódokat a virológusok a laboratóriumok falán tudják letapogatni a Genetikai kód letapogatása akció keretében. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Scan genetic code &
+	- \\
+	\hline
+
+	\azonosito &
+	Egy kódot akárhány virológus letapogathat. &
+	bemutatás és kiértékelés &
+	fontos &
+	csapat &
+	Scan genetic code &
+	- \\
+	\hline
+
+	\azonosito &
+	Ha egy ágensnek megismeri valaki a genetikai kódját, majd összegyűjti a hozzá szükséges anyagokat, az Ágens elkészítése akciót választva elkészítheti. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	View interface, Scan genetic code, Create agent &
+	- \\
+	\hline
+
+	\azonosito &
+	Az Ágens felhasználása akcióval a virológus rákenheti egy másik virológusra vagy akár saját magára. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Use agent &
+	- \\
+	\hline
+
+	\azonosito &
+	Az ágensek hatása előre meghatározott körig tart, utána érvényüket vesztik. &
+	bemutatás &
+	fontos &
+	csapat &
+	Use agent, Control time &
+	- \\
+	\hline
+
+	\azonosito &
+	Vítustánc-vírus: amíg a vírus hatása alatt áll egy játékos, a karakterét nem lehet irányítani, a szomszédos mezők közül egyet véletlenszerűen választva lép. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Use agent, Move character, Control time &
+	- \\
+	\hline
+
+	\azonosito &
+	Amikor valakire alkalmazzák a vakcinát, azon megszűnnek hatni a már rákent és az ezután alkalmazott vírusok is adott számú körig. &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Use agent, Control time &
+	- \\
+	\hline
+
+	\azonosito &
+	A játékos, akin a paralízis-vírust alkalmazzák, adott számú körig egy helyben marad, nem tud se lépni, se akciót végrehajtani. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Use agent, Move character, Control time &
+	- \\
+	\hline
+
+	\azonosito &
+	Akire a felejtő-vírust alkalmazzák, elfelejti az összes genetikai kódot, amit addig megtanult. &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Use agent &
+	- \\
+	\hline
+
+	\azonosito &
+	A játékosok védőfelszereléseket is gyűjthetnek a játékban. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Pick up equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	Védőfelszerelések az óvóhely mezőkről szedhetők fel a Védőfelszerelés felvétele akció választásával. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	View interface, Pick up equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	Egy virológusnál egyszerre maximum három védőfelszerelés lehet. &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Pick up equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	A védőfelszerelések ellophatók egymástól a Lopás akció keretében. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Steal equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	A Lopás akció akkor lehet sikeres, ha a megtámadott játékos bénult állapotban van. &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Use agent, Steal equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	A lopást indító virológushoz egy új védőfelszerelés és maximálisan elvehető mennyiségű anyag kerül a játékostársa készletéből. &
+	bemutatás &
+	fontos &
+	csapat &
+	Steal equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	Az esetek 82,3\%-ban a védőköpenyt viselőre rákent ágensek hatástalanok lesznek. A saját magára kent ágensek esetén is azonos a hatása. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Use agent &
+	- \\
+	\hline
+
+	\azonosito &
+	A zsák  növeli a virológus anyag-befogadóképességét, így több anyagot tud magánál tartani. &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Collect material &
+	- \\
+	\hline
+
+	\azonosito &
+	A kesztyű visszaveri a felvétel után a virológusra dobott ágenst, annak hatásától függetlenül. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Use agent &
+	- \\
+	\hline
+
+	\azonosito &
+	A kesztyű egy használat után elveszik. &
+	bemutatás és kiértékelés &
+	fontos &
+	csapat &
+	Use agent &
+	- \\
+	\hline
+
+	\azonosito &
+	Egy adott típusú védőfelszerelésből több példány is megtalálható a játékban. &
+	bemutatás &
+	fontos &
+	csapat &
+	Pick up equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	Egy játékos minden védőfelszerelés típusból legfeljebb egyet birtokolhat. &
+	bemutatás és kiértékelés &
+	fontos &
+	csapat &
+	Pick up equipment &
+	- \\
+	\hline
+
+	\azonosito &
+	A Lopás és az Ágens felhasználása akcióra akkor van lehetőség, ha egy virológus más virológusokkal találkozik egy játékmezőn. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	Steal equipment, Use agent &
+	- \\
+	\hline
+
+	\azonosito &
+	Egy területtel legalább egy, de véges számú más terület lehet szomszédos. &
+	bemutatás &
+	alapvető &
+	feladatkiírás &
+	View interrface, Move character &
+	- \\
+	\hline
+
+	\azonosito &
+	A játékot az a játékos nyeri, aki az összes a játékban szereplő ágens genetika kódját először megtanulja. &
+	bemutatás és kiértékelés &
+	alapvető &
+	feladatkiírás &
+	Scan genetic code &
+	- \\
+
+	\hline
+\end{xltabular}
+
+\subsubsection{Erőforrásokkal kapcsolatos követelmények}
+
+\noindent\begin{tabularx}{\textwidth}{| l | X | l | l | l | l | l |}
+	\hline
+	\textbf{Azonosító}                                                                              &
+	\textbf{Leírás}                                                                                 &
+	\textbf{Ellenőrzés}                                                                             &
+	\textbf{Prioritás}                                                                              &
+	\textbf{Forrás}                                                                                 &
+	\textbf{Komment}                                                                                  \\
+
+	\hline
+	\hline
+
+	\azonosito                                                                                      &
+	A futtató számítógépen szükség van JVM-re, amely futtatásához rendelkezik megfelelő hardverrel. &
+	bemutatás                                                                                       &
+	alapvető                                                                                        &
+	csapat                                                                                          &
+	-                                                                                                 \\
+
+	\hline
+\end{tabularx}
+
+\subsubsection{Átadással kapcsolatos követelmények}
+
+\noindent\begin{tabularx}{\textwidth}{| l | X | l | l | l | l | l |}
+	\hline
+	\textbf{Azonosító}                                   &
+	\textbf{Leírás}                                      &
+	\textbf{Ellenőrzés}                                  &
+	\textbf{Prioritás}                                   &
+	\textbf{Forrás}                                      &
+	\textbf{Komment}                                       \\
+
+	\hline
+	\hline
+
+	\azonosito                                           &
+	A programnak működnie kell az adott virtuális gépen. &
+	bemutatás                                            &
+	alapvető                                             &
+	megrendelő                                           &
+	-                                                      \\
+
+	\hline
+\end{tabularx}
+
+\subsubsection{Egyéb nem funkcionális követelmények}
+
+\noindent\begin{tabularx}{\textwidth}{| l | X | l | l | l | l | l |}
+	\hline
+	\textbf{Azonosító}                                                                        &
+	\textbf{Leírás}                                                                           &
+	\textbf{Ellenőrzés}                                                                       &
+	\textbf{Prioritás}                                                                        &
+	\textbf{Forrás}                                                                           &
+	\textbf{Komment}                                                                            \\
+
+	\hline
+	\hline
+
+
+	\azonosito                                                                                &
+	A programnak működnie kell Windows operációs rendszereken.                                &
+	bemutatás                                                                                 &
+	alapvető                                                                                  &
+	csapat                                                                                    &
+	-                                                                                           \\
+	\hline
+
+
+	\azonosito                                                                                &
+	A programnak működnie kell Linux operációs rendszereken.                                  &
+	bemutatás                                                                                 &
+	fontos                                                                                    &
+	csapat                                                                                    &
+	-                                                                                           \\
+	\hline
+
+
+	\azonosito                                                                                &
+	A kiértékeléssel ellenőrizendő funkcionális követelményeknek tesztelhetőnek kell lenniük. &
+	bemutatás                                                                                 &
+	fontos                                                                                    &
+	csapat                                                                                    &
+	-                                                                                           \\
+	\hline
+
+
+	\azonosito                                                                                &
+	A felhasználóknak tudni kell kezelni a számítógép perifériáit.                            &
+	bemutatás                                                                                 &
+	alapvető                                                                                  &
+	csapat                                                                                    &
+	-                                                                                           \\
+
+	\hline
+\end{tabularx}
+

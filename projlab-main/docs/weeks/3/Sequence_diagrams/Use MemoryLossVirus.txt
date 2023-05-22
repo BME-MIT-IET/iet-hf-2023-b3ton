@@ -1,0 +1,14 @@
+title Use MemoryLossVirus
+
+
+"v1: Virologist" ->+ "m: MemoryLossVirus" : useOnBy(v2, v1)
+"m: MemoryLossVirus" -->* "tmle: TimedMemoryLossEffect" : <<create>>
+"m: MemoryLossVirus" ->+ "v2: Virologist" : addEffectBy(tmle,v1)
+"v2: Virologist" -->-  "m: MemoryLossVirus" : added
+
+opt added == true
+    "m: MemoryLossVirus" ->+ "v2: Virologist" : forgetGeneticCodes()
+    "v2: Virologist" -->- "m: MemoryLossVirus" :
+end
+
+"m: MemoryLossVirus" -->- "v1: Virologist" :

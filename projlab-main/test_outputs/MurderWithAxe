@@ -1,0 +1,15 @@
+field created 0 shelter axe 1
+virologist-created 2
+virologist 2 placed on 0
+field created 3 field
+fields 0 3 connected
+virologist created 4
+virologist 4 placed on 3
+turn started for 2
+2 took action collect
+turn started for 4
+turn started for 2
+2 moved to 3
+2 took action kill 4
+turn started for 2
+turn started for 2

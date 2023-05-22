@@ -1,0 +1,18 @@
+@startuml Next turn
+title Next turn
+Canvas -> Controller ++ : nextTurn()
+Controller -> VirologistView ++ : setVirologist(currentVirologist)
+VirologistView --> Controller --
+Controller -> "currentVirologist : Virologist" ++ : getCurrentField()
+"currentVirologist : Virologist" --> Controller -- : f
+Controller -> FieldView ++ : setField(f)
+FieldView --> Controller --
+Controller -> FieldView ++ : draw()
+FieldView --> Controller --
+Controller -> VirologistView ++ : draw()
+VirologistView --> Controller --
+Controller -> "currentVirologist : Virologist" ++ : startTurn()
+"currentVirologist : Virologist" --> Controller --
+Controller --> Canvas --
+participant "f : Field"
+@enduml

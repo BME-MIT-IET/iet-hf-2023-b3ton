@@ -1,0 +1,16 @@
+field created 0 laboratory vaccine-gene
+virologist created 1
+virologist created 2
+virologist 1 placed on 0
+virologist 2 placed on 0
+agent 3 added to 1 
+agent 4 added to 2
+agent 5 added to 1
+turn started for 1
+1 took action use-agent 3 1
+turn started for 2
+2 took action use-agent 4 1
+turn-started for 1
+2 took action use-agent 5 2
+1 has : TimedProtectingEffect
+2 has : TimedChoreaEffect

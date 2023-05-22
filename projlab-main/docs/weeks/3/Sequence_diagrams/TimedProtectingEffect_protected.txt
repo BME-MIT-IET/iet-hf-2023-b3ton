@@ -1,0 +1,5 @@
+title TimedProtectingEffect Protected
+
+
+"v: Virologist" ->+  "tpe: TimedProtectingEffect" : protected()
+"tpe: TimedProtectingEffect" -->- "v: Virologist" : true

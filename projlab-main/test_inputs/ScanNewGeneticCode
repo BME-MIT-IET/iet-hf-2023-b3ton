@@ -1,0 +1,6 @@
+create-field laboratory vaccine-gene
+create-virologist
+place-virologist 1 0
+next-turn
+virologist-action collect
+get-genetic-codes 1

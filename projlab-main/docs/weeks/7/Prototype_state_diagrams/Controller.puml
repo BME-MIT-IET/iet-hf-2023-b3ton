@@ -1,0 +1,10 @@
+@startuml Controller states
+
+title Controller states
+
+[*] --> GameReady
+GameReady -> GameRunning: startGame()
+GameRunning -> GameRunning : nextTurn()
+GameRunning -> GameEnded : virologistWon()
+GameEnded --> [*]
+@enduml

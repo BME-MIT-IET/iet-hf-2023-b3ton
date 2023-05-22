@@ -1,0 +1,6 @@
+title Create MemoryLossVirus
+
+
+"v: Virologist" ->+ "m: MemoryLossVirusGene" : createAgent()
+"m: MemoryLossVirusGene" -->* "mv: MemoryLossVirus" : <<create>>
+"m: MemoryLossVirusGene" -->- "v: Virologist" : mv

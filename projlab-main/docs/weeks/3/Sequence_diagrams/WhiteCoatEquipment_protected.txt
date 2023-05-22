@@ -1,0 +1,5 @@
+title WhiteCoatEquipment Protected
+
+
+"v: Virologist" ->+  "wce: WhiteCoatEquipment" : protected()
+"wce: WhiteCoatEquipment" -->- "v: Virologist" : true

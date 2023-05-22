@@ -1,0 +1,12 @@
+title BearDanceVirus Spreads on a Field
+
+
+"by: Virologist" ->+ "f: Field" : spreadAgentBy(bdv,v)
+loop v in virologists
+opt v!= by
+"f: Field" ->+ "bdv: BearDanceVirus" : useOnBy(v,by)
+"bdv: BearDanceVirus" -->- "f: Field" :
+end
+end
+"f: Field" -->- "by: Virologist" :
+

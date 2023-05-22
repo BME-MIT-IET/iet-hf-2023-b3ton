@@ -1,0 +1,5 @@
+title Effect spreads
+
+
+"v: Virologist" ->+  "e: Effect" : spreads()
+"e: Effect" -->- "v: Virologist" : null

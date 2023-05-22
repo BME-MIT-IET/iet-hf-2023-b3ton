@@ -1,0 +1,8 @@
+field created 0 storage 60 40
+0 has : 40 aminoacid 60 nucleotide
+virologist created 1
+virologist 1 placed on 0
+turn started for 1
+1 took action collect
+1 has : 10 aminoacid 10 nucleotide
+0 has : 30 aminoacid 50 nucleotide

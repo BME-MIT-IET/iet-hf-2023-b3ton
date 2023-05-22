@@ -1,0 +1,5 @@
+title TimedParalyzingEffect Paralyzed
+
+
+"v: Virologist" ->+  "tpe: TimedParalyzingEffect" : paralyzed()
+"tpe: TimedParalyzingEffect" -->- "v: Virologist" : true
