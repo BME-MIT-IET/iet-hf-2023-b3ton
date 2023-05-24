@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="45ff7db1-20f5-4f1d-bc01-fe0722417dba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Prototype.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Prototype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/WhiteCoatEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/WhiteCoatEquipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/ChoreaVirusGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/ChoreaVirusGene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/MemoryLossVirusGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/MemoryLossVirusGene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/ParalyzingVirusGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/ParalyzingVirusGene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/VaccineGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/VaccineGene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Virologist.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Virologist.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

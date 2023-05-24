@@ -10,18 +10,18 @@ public class ChoreaVirusGene extends GeneticCode {
 
     private static ChoreaVirusGene onlyInstance = null; // az egyetlen példány
 
-    private final static String choreaMethodName = "ChoreaVirusGene()";
-    private static final String choreaClassType = "ChoreaVirusGene";
-    private static final String createAgentMethod = "createAgent()";
-    private static final String getInstanceMethodName = "getInstance()";
+    private static final String CHOREA_VIRUS_GENE = "ChoreaVirusGene()";
+    private static final String CHOREA_CLASS_TYPE = "ChoreaVirusGene";
+    private static final String CREATE_AGENT_METHOD = "createAgent()";
+    private static final String GET_INSTANCE_METHOD_NAME = "getInstance()";
     /**
      * Paraméter nélküli PRIVÁT konstruktor
      */
     private ChoreaVirusGene() {
-        Skeleton.printMethodCall(toString(), choreaMethodName, true, null);
+        Skeleton.printMethodCall(toString(), CHOREA_VIRUS_GENE, true, null);
         aminoAcidCost = 4;  //random számok, amik megadják, hogy mennyi aminosav és nukleotid kell
         nucleotideCost = 1; // az előállításához
-        Skeleton.printMethodCall(toString(), choreaMethodName, false, null);
+        Skeleton.printMethodCall(toString(), CHOREA_VIRUS_GENE, false, null);
     }
     
     /**
@@ -30,12 +30,12 @@ public class ChoreaVirusGene extends GeneticCode {
      * @return az egyetlen ChoreaVirusGene
      */
     public static ChoreaVirusGene getInstance(){
-        Skeleton.printMethodCall(choreaClassType, getInstanceMethodName, true, null);
+        Skeleton.printMethodCall(CHOREA_CLASS_TYPE, GET_INSTANCE_METHOD_NAME, true, null);
         if (onlyInstance == null){
             onlyInstance = new ChoreaVirusGene();
             Controller.addGeneticCode(onlyInstance);
         }
-        Skeleton.printMethodCall(choreaClassType, getInstanceMethodName, false, onlyInstance.toString());
+        Skeleton.printMethodCall(CHOREA_CLASS_TYPE, GET_INSTANCE_METHOD_NAME, false, onlyInstance.toString());
         return onlyInstance;
     }
 
@@ -45,9 +45,9 @@ public class ChoreaVirusGene extends GeneticCode {
      * @return ChoreaVirusGenehez tartozó ChoreaVirus
      */
     public ChoreaVirus createAgent() {
-        Skeleton.printMethodCall(toString(), createAgentMethod, true, null);
+        Skeleton.printMethodCall(toString(), CREATE_AGENT_METHOD, true, null);
         ChoreaVirus cv = new ChoreaVirus();
-        Skeleton.printMethodCall(toString(), createAgentMethod, false, cv.toString());
+        Skeleton.printMethodCall(toString(), CREATE_AGENT_METHOD, false, cv.toString());
         return cv;
     }
 
@@ -58,6 +58,6 @@ public class ChoreaVirusGene extends GeneticCode {
      */
     @Override
     public String toString() {
-        return choreaClassType + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
+        return CHOREA_CLASS_TYPE + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
     }
 }

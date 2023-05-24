@@ -86,3 +86,9 @@ Itt nem javítottam minden lehetséges hibából hanem csak szemezgettem:
 A statikus analízis csupán külsőleg és fogalmilag javított a kódunkon, több programozási törvényt betartatva velünk.
 
 A logikai hibákat viszont nem fogja megtalálni, ehhez nekünk kell architektűrálisan jól tervezni.
+
+# UPDATE
+
+3 commit után sikerült 4 kategóriára 'A' értékelést kapni.
+
+Természetesen a kódlefedettség nem tud megvalósulni, hiszen pl. a korábbi prototípus függvényei nincsenek használva.

@@ -9,21 +9,21 @@ public class VaccineGene extends GeneticCode {
     private static VaccineGene onlyInstance = null; // az egyetlen példány
 
 
-    private static final String VaccineMethodName = "VaccineGene()";
+    private static final String VACCINE_METHOD_NAME = "VaccineGene()";
 
-    private static final String getInstanceMethodName = "getInstance()";
+    private static final String GET_INSTANCE_METHOD_NAME = "getInstance()";
 
-    private static final String createAgentMethodName = "createAgent()";
+    private static final String CREATE_AGENT_METHOD_NAME = "createAgent()";
 
-    private static final String classType = "VaccineGene";
+    private static final String CLASS_TYPE = "VaccineGene";
     /**
      * Paraméter nélküli PRIVÁT konstruktor, inicializálja a GeneticCode-tól örökölt aminoAcidCost és nucleotideCost változókat.
      */
     public VaccineGene() {
-        Skeleton.printMethodCall(toString(), VaccineMethodName, true, null);
+        Skeleton.printMethodCall(toString(), VACCINE_METHOD_NAME, true, null);
         aminoAcidCost = 3;   //random számok, amik megadják, hogy mennyi aminosav és nukleotid kell
         nucleotideCost = 2;  // az előállításához
-        Skeleton.printMethodCall(toString(), VaccineMethodName, false, null);
+        Skeleton.printMethodCall(toString(), VACCINE_METHOD_NAME, false, null);
     }
 
     /**
@@ -32,12 +32,12 @@ public class VaccineGene extends GeneticCode {
      * @return az egyetlen VaccineGene
      */
     public static VaccineGene getInstance(){ 
-        Skeleton.printMethodCall(classType, getInstanceMethodName, true, null);
+        Skeleton.printMethodCall(CLASS_TYPE, GET_INSTANCE_METHOD_NAME, true, null);
         if (onlyInstance == null){
             onlyInstance = new VaccineGene();
             Controller.addGeneticCode(onlyInstance);
         }
-        Skeleton.printMethodCall(classType, getInstanceMethodName, false, onlyInstance.toString());
+        Skeleton.printMethodCall(CLASS_TYPE, GET_INSTANCE_METHOD_NAME, false, onlyInstance.toString());
         return onlyInstance;
     }
 
@@ -46,9 +46,9 @@ public class VaccineGene extends GeneticCode {
      * @return VaccineGenehez tartozó VaccineGene
      */
     public Vaccine createAgent() {
-        Skeleton.printMethodCall(toString(), createAgentMethodName, true, null);
+        Skeleton.printMethodCall(toString(), CREATE_AGENT_METHOD_NAME, true, null);
         Vaccine v = new Vaccine();
-        Skeleton.printMethodCall(toString(), createAgentMethodName, false, v.toString());
+        Skeleton.printMethodCall(toString(), CREATE_AGENT_METHOD_NAME, false, v.toString());
         return v;
     }
 
@@ -59,6 +59,6 @@ public class VaccineGene extends GeneticCode {
      */
     @Override
     public String toString() {
-        return classType + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
+        return CLASS_TYPE + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
     }
 }
