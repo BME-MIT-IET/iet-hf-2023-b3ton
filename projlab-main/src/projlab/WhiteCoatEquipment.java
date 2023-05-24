@@ -1,5 +1,6 @@
 package projlab;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Random;
 public class WhiteCoatEquipment extends Equipment {
 
 
-    private Random rand;
+    private final SecureRandom rand = new SecureRandom();
     /**
      * Paraméter nélküli konstruktor
      */
@@ -16,7 +17,7 @@ public class WhiteCoatEquipment extends Equipment {
         super();
         Skeleton.printMethodCall(toString(), "WhiteCoatEquipment()", true, null);
         Skeleton.printMethodCall(toString(), "WhiteCoatEquipment()", false, null);
-        rand = new Random();
+
     }
 
     /**

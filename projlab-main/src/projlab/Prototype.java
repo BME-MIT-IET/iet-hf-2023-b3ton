@@ -5,6 +5,8 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Prototype {
 
@@ -24,14 +26,12 @@ public class Prototype {
     private static final String Vaccine = "vaccine-gene";
 
     public static void main(String[] args) {
-
         Scanner bemenet = new Scanner(System.in);
         boolean exit = false;
 
         while (!exit) {
             String szoveg;
-            try {
-                szoveg = bemenet.nextLine();
+            szoveg = bemenet.nextLine();
             // ha üres a sor
             if (szoveg.equals("")) {
                 continue;
@@ -122,9 +122,6 @@ public class Prototype {
                 }
             }catch(NumberFormatException e){
                 kiir("Nem jó formátumú parancs!");
-            }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         }
         bemenet.close();
@@ -638,100 +635,97 @@ public class Prototype {
      * @param cmd a parancs argumentumai egy String tömbben
      */
     private static void action(String[] cmd){
-        try {
-            if (cmd.length < 2 || cmd.length > 5) {
-                hiba(badInputMessage);
-                return;
-            }
-            Virologist v = Controller.getCurrentVirologist();
-            String output = String.valueOf(v.getId()) + " took action " + cmd[1] + " ";
-            switch (cmd[1]) {
-                case "use-agent":
-                    Virologist useOnVir = null;
-                    Collection<Agent> agents = v.getAgents().values();
-                    Agent toUse = null;
-                    for (Agent a : agents) {
-                        if (a.getId() == Integer.parseInt(cmd[2])) {
-                            toUse = a;
-                            break;
-                        }
-                    }
-                    if (cmd.length == 3) {
-                        useOnVir = v;
-                    } else if (cmd.length == 4) {
-                        useOnVir = Controller.getVirologist(Integer.parseInt(cmd[3]));
-                    } else {
-                        hiba(badInputMessage);
-                        return;
-                    }
-                    if (toUse != null) {
-                        toUse.useOnBy(useOnVir, v);
-                        output += String.valueOf(toUse.getId()) + " " + String.valueOf(useOnVir.getId());
-                    } else {
-                        hiba("Rossz az ágens-azonosító");
-                        return;
-                    }
-                    break;
-                case "collect":
-                    v.collectFromField();
-                    break;
-                case "steal":
-                    Virologist toStealFrom = Controller.getVirologist(Integer.parseInt(cmd[2]));
-                    v.stealFrom(toStealFrom);
-                    output += String.valueOf(toStealFrom.getId());
-                    break;
-                case "kill":
-                    Virologist toKill = Controller.getVirologist(Integer.parseInt(cmd[2]));
-                    v.kill(toKill);
-                    output += toKill.getId();
-                    break;
-                case "create-agent":
-                    GeneticCode gc = null;
-                    if (cmd.length == 3) {
-                        switch (cmd[2]) {
-                            case Paralyzing:
-                                gc = ParalyzingVirusGene.getInstance();
-                                break;
-                            case Chorea:
-                                gc = ChoreaVirusGene.getInstance();
-                                break;
-                            case MemoryLoss:
-                                gc = MemoryLossVirusGene.getInstance();
-                                break;
-                            case Vaccine:
-                                gc = VaccineGene.getInstance();
-                                break;
-                            default:
-                                hiba(noGeneLikeThisMessage);
-                                break;
-                        }
-                    }
-                    int id = v.createAgent(gc);
-                    output += id;
-                    break;
-                case "drop-equipment":
-                    if (cmd.length != 3) {
-                        hiba(badInputMessage);
-                        return;
-                    }
-                    Collection<Equipment> equipments = v.getEquipments().values();
-                    Equipment e = null;
-                    for (Equipment eq : equipments) {
-                        if (eq.getId() == Integer.parseInt(cmd[2])) {
-                            e = eq;
-                            break;
-                        }
-                    }
-                    v.dropEquipment(e);
-                    output += String.valueOf(e.getId());
-                    break;
-                default:
-                    break;
-            }
-
-            kiir(output);
-        } catch (NullPointerException npe){
-            npe.printStackTrace();
+        if (cmd.length < 2 || cmd.length > 5) {
+            hiba(badInputMessage);
+            return;
         }
+        Virologist v = Controller.getCurrentVirologist();
+        String output = String.valueOf(v.getId()) + " took action " + cmd[1] + " ";
+        switch (cmd[1]) {
+            case "use-agent":
+                Virologist useOnVir = null;
+                Collection<Agent> agents = v.getAgents().values();
+                Agent toUse = null;
+                for (Agent a : agents) {
+                    if (a.getId() == Integer.parseInt(cmd[2])) {
+                        toUse = a;
+                        break;
+                    }
+                }
+                if (cmd.length == 3) {
+                    useOnVir = v;
+                } else if (cmd.length == 4) {
+                    useOnVir = Controller.getVirologist(Integer.parseInt(cmd[3]));
+                } else {
+                    hiba(badInputMessage);
+                    return;
+                }
+                if (toUse != null) {
+                    toUse.useOnBy(useOnVir, v);
+                    output += String.valueOf(toUse.getId()) + " " + String.valueOf(useOnVir.getId());
+                } else {
+                    hiba("Rossz az ágens-azonosító");
+                    return;
+                }
+                break;
+            case "collect":
+                v.collectFromField();
+                break;
+            case "steal":
+                Virologist toStealFrom = Controller.getVirologist(Integer.parseInt(cmd[2]));
+                v.stealFrom(toStealFrom);
+                output += String.valueOf(toStealFrom.getId());
+                break;
+            case "kill":
+                Virologist toKill = Controller.getVirologist(Integer.parseInt(cmd[2]));
+                v.kill(toKill);
+                output += toKill.getId();
+                break;
+            case "create-agent":
+                GeneticCode gc = null;
+                if (cmd.length == 3) {
+                    switch (cmd[2]) {
+                        case Paralyzing:
+                            gc = ParalyzingVirusGene.getInstance();
+                            break;
+                        case Chorea:
+                            gc = ChoreaVirusGene.getInstance();
+                            break;
+                        case MemoryLoss:
+                            gc = MemoryLossVirusGene.getInstance();
+                            break;
+                        case Vaccine:
+                            gc = VaccineGene.getInstance();
+                            break;
+                        default:
+                            hiba(noGeneLikeThisMessage);
+                            break;
+                    }
+                }
+                int id = v.createAgent(gc);
+                output += id;
+                break;
+            case "drop-equipment":
+                if (cmd.length != 3) {
+                    hiba(badInputMessage);
+                    return;
+                }
+                Collection<Equipment> equipments = v.getEquipments().values();
+                Equipment e = null;
+                for (Equipment eq : equipments) {
+                    if (eq.getId() == Integer.parseInt(cmd[2])) {
+                        e = eq;
+                        break;
+                    }
+                }
+                v.dropEquipment(e);
+                if(e != null) {
+                    output += String.valueOf(e.getId());
+                }
+                break;
+            default:
+                break;
+        }
+        kiir(output);
     }
 }
