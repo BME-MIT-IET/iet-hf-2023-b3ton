@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ff7db1-20f5-4f1d-bc01-fe0722417dba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static_analizys.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static_analizys.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Canvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/ChoreaVirusGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/ChoreaVirusGene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/GlovesEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/GlovesEquipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/MemoryLossVirusGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/MemoryLossVirusGene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/ParalyzingVirusGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/ParalyzingVirusGene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Prototype.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Prototype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/SackEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/SackEquipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Shelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Shelter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Skeleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/TimedEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/TimedEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/TimedParalyzingEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/TimedParalyzingEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/TimedProtectingEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/TimedProtectingEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/UserSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/UserSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/VaccineGene.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/VaccineGene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/Virologist.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/Virologist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/VirologistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/VirologistView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projlab-main/src/projlab/WhiteCoatEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/projlab-main/src/projlab/WhiteCoatEquipment.java" afterDir="false" />
-    </list>
+    <list default="true" id="45ff7db1-20f5-4f1d-bc01-fe0722417dba" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

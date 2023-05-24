@@ -7,6 +7,8 @@ import java.util.Random;
  */
 public class WhiteCoatEquipment extends Equipment {
 
+
+    private Random rand;
     /**
      * Paraméter nélküli konstruktor
      */
@@ -14,6 +16,7 @@ public class WhiteCoatEquipment extends Equipment {
         super();
         Skeleton.printMethodCall(toString(), "WhiteCoatEquipment()", true, null);
         Skeleton.printMethodCall(toString(), "WhiteCoatEquipment()", false, null);
+        rand = new Random();
     }
 
     /**
@@ -26,7 +29,7 @@ public class WhiteCoatEquipment extends Equipment {
     @Override
     public boolean resist() {
         Skeleton.printMethodCall(toString(), "resist()", true, null);
-        boolean resists = Controller.getDeterminism() || (100 * new Random().nextDouble()) < 82.3;
+        boolean resists = Controller.getDeterminism() || (100 * rand.nextDouble()) < 82.3;
         Skeleton.printMethodCall(toString(), "resist()", false, Boolean.toString(resists));
         return resists;
     }

@@ -235,20 +235,20 @@ public class Prototype {
             }
         }
         Controller.addField(field);
-        try {
-            StringBuilder output = new StringBuilder();
-            output.append("field created " + field.getId() + " ");
-            for (int i = 1; i < cmd.length; ++i) {
-                output.append(cmd[i]);
-                output.append(" ");
-            }
-            if (cmd[1].equals("shelter")) {
-                output.append(e.getId());
-            }
-            kiir(output.toString());
-        }catch (NullPointerException npe ){
-            npe.printStackTrace();
+
+        StringBuilder output = new StringBuilder();
+        if(field != null) {
+            output.append("field created ").append(field.getId()).append(" ");
         }
+        for (int i = 1; i < cmd.length; ++i) {
+            output.append(cmd[i]);
+            output.append(" ");
+        }
+        if (cmd[1].equals("shelter") && e != null) {
+            output.append(e.getId());
+        }
+        kiir(output.toString());
+
     }
 
     /**
