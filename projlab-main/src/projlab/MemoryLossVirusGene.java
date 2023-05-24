@@ -9,16 +9,23 @@ public class MemoryLossVirusGene extends GeneticCode {
     /**
      * A ‘Singleton’ minta szerint az osztály egyetlen példánya tárolva egy statikus privát változóban.
      */
-    private static MemoryLossVirusGene only_instance = null; //az egyetlen példány
+    private static MemoryLossVirusGene onlyInstance = null; //az egyetlen példány
 
+    private static final String memoryLossMethodName = "MemoryLossVirusGene()";
+
+    private static final String getInstanceMethodName = "getInstance()";
+
+    private static final String createAgentMethodName = "createAgent()";
+
+    private static final String classType = "MemoryLossVirusGene";
     /*
      * Paraméter nélküli PRIVÁT konstruktor
      */
     private MemoryLossVirusGene() {
-        Skeleton.printMethodCall(toString(), "MemoryLossVirusGene()", true, null);
+        Skeleton.printMethodCall(toString(), memoryLossMethodName, true, null);
         aminoAcidCost = 2;      //random számok, amik megadják, hogy mennyi aminosav és nukleotid kell
         nucleotideCost = 2;         // az előállításához
-        Skeleton.printMethodCall(toString(), "MemoryLossVirusGene()", false, null);
+        Skeleton.printMethodCall(toString(), memoryLossMethodName, false, null);
     }
 
     /**
@@ -27,13 +34,13 @@ public class MemoryLossVirusGene extends GeneticCode {
      * @return az egyetlen MemoryLossVirusGene
      */
     public static MemoryLossVirusGene getInstance(){
-        Skeleton.printMethodCall("MemoryLossVirusGene", "getInstance()", true, null);
-        if (only_instance == null){
-            only_instance = new MemoryLossVirusGene();
-            Controller.addGeneticCode(only_instance);
+        Skeleton.printMethodCall(classType, getInstanceMethodName, true, null);
+        if (onlyInstance == null){
+            onlyInstance = new MemoryLossVirusGene();
+            Controller.addGeneticCode(onlyInstance);
         }
-        Skeleton.printMethodCall("MemoryLossVirusGene", "getInstance()", false, only_instance.toString());
-        return only_instance;
+        Skeleton.printMethodCall(classType, getInstanceMethodName, false, onlyInstance.toString());
+        return onlyInstance;
     }
 
     /**
@@ -42,9 +49,9 @@ public class MemoryLossVirusGene extends GeneticCode {
      * @return MemoryLossVirusGenehez tartozó MemoryLossVirus
      */
     public MemoryLossVirus createAgent() {
-        Skeleton.printMethodCall(toString(), "createAgent()", true, null);
+        Skeleton.printMethodCall(toString(), createAgentMethodName, true, null);
         MemoryLossVirus mlv = new MemoryLossVirus();
-        Skeleton.printMethodCall(toString(), "createAgent()", false, mlv.toString());
+        Skeleton.printMethodCall(toString(), createAgentMethodName, false, mlv.toString());
         return mlv;
     }
 
@@ -55,6 +62,6 @@ public class MemoryLossVirusGene extends GeneticCode {
      */
     @Override
     public String toString() {
-        return "MemoryLossVirusGene" + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
+        return classType + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
     }
 }

@@ -21,6 +21,7 @@ public class TimedProtectingEffect extends TimedEffect {
      * 
      * @return true
      */
+    @Override
     public boolean resist() {
         Skeleton.printMethodCall(toString(), "resist()", true, Boolean.toString(true));
         Skeleton.printMethodCall(toString(), "resist()", false, Boolean.toString(true));

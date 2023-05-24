@@ -249,6 +249,7 @@ public class Virologist {
                 }
 
             } catch (IndexOutOfBoundsException e) {
+                e.printStackTrace();
             }
         }
         Skeleton.printMethodCall(toString(), "getStolenBy(Virologist v)", false, null);
@@ -516,7 +517,7 @@ public class Virologist {
         }
 
         // Kör elején kifejti a hasChorea hatását, ha van
-        if (Controller.getDeterminism() == false) {
+        if (!Controller.getDeterminism()) {
             boolean hasChorea = false;
             for (Effect effect : getAllEffects()) {
                 if (effect.hasChorea()) {

@@ -7,7 +7,7 @@ package projlab;
 public abstract class Equipment extends Effect {
     protected final int id;
 
-    public Equipment(){
+    protected Equipment(){
         id = Controller.getNewId();
     }
     /**

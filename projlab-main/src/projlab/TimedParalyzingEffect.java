@@ -21,6 +21,7 @@ public class TimedParalyzingEffect extends TimedEffect {
      * 
      * @return true
      */
+    @Override
     public boolean paralyzed() {
         Skeleton.printMethodCall(toString(), "paralyzed()", true, Boolean.toString(true));
         Skeleton.printMethodCall(toString(), "paralyzed()", false, Boolean.toString(true));

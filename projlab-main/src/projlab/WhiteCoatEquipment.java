@@ -23,9 +23,10 @@ public class WhiteCoatEquipment extends Equipment {
      * @return a vizsgált effect GlovesEquipment-e, mivel igen,
      *         a visszatérési érték 82.3%-ban true, egyébként false
      */
+    @Override
     public boolean resist() {
         Skeleton.printMethodCall(toString(), "resist()", true, null);
-        boolean resists = Controller.getDeterminism() ? true : (100 * new Random().nextDouble()) < 82.3;
+        boolean resists = Controller.getDeterminism() || (100 * new Random().nextDouble()) < 82.3;
         Skeleton.printMethodCall(toString(), "resist()", false, Boolean.toString(resists));
         return resists;
     }

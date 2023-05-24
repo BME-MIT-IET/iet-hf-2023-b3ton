@@ -13,7 +13,7 @@ public abstract class Agent implements Timed {
     protected int timeLeft = decomposeTime;
     protected final int id;
 
-    public Agent(){
+    protected Agent(){
         id = Controller.getNewId();
     }
     /**
@@ -24,7 +24,7 @@ public abstract class Agent implements Timed {
     @Override
     public boolean timePasses() {
         --timeLeft;
-        return timeLeft <= 0 ? true : false; 
+        return timeLeft <= 0;
     }
 
     /**

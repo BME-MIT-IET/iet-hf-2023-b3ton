@@ -20,6 +20,7 @@ public class SackEquipment extends Equipment {
      * @return 2-t ad vissza, mivel kétszeres szorzót kap a Virologist
      *         az anyagkapacitására
      */
+    @Override
     public double moreMaterial() {
         Skeleton.printMethodCall(toString(), "moreMaterial()", true, null);
         Double materialIncrease = 2.0;

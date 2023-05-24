@@ -39,11 +39,7 @@ public class VirologistView implements View {
 
         HashSet<GeneticCode> allGeneticCodes = Controller.getGeneticCodes();
         for (GeneticCode gc : allGeneticCodes) {
-            if (geneticCodes.contains(gc)) {
-                canvas.setGeneticCodeCollected(gc, true);
-            } else {
-                canvas.setGeneticCodeCollected(gc, false);
-            }
+            canvas.setGeneticCodeCollected(gc, geneticCodes.contains(gc));
         }
 
         for (Agent a : agents.values()) {
