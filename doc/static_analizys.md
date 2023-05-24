@@ -92,3 +92,7 @@ A logikai hibákat viszont nem fogja megtalálni, ehhez nekünk kell architektű
 3 commit után sikerült 4 kategóriára 'A' értékelést kapni.
 
 Természetesen a kódlefedettség nem tud megvalósulni, hiszen pl. a korábbi prototípus függvényei nincsenek használva.
+
+Íme a jelenlegi report:
+
+![](screenshots/AfterBugFix.png)
