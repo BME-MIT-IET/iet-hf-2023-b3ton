@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CreateAgent" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-05-28T18:36:13" hostname="MARK-GAMING-PC" time="0.253">
+  <properties/>
+  <testcase name="Virologist creates Chorea Virus" classname="CreateAgent" time="0.241"/>
+  <testcase name="Virologist creates Memory Loss Virus" classname="CreateAgent" time="0.003"/>
+  <testcase name="Virologist creates Paralyzing Virus" classname="CreateAgent" time="0.003"/>
+  <testcase name="Virologist creates Vaccine" classname="CreateAgent" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

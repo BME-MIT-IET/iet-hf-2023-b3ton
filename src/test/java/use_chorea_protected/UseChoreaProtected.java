@@ -31,9 +31,9 @@ public class UseChoreaProtected {
         sackEquipment = new SackEquipment();
     }
 
-    @Given("there is a TimedProtectingEffect with a duration of {int}")
-    public void createTimedProtectingEffect(int duration) {
-        protectingEffect = new TimedProtectingEffect(duration);
+    @Given("there is a TimedProtectingEffect with a duration of 10")
+    public void createTimedProtectingEffect() {
+        protectingEffect = new TimedProtectingEffect(10);
     }
 
     @Given("the SackEquipment is added to one of the Virologists")

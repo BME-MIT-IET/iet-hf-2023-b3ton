@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Use ChoreaVirus when protected by vaccine" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-05-27T17:41:06" hostname="MARK-GAMING-PC" time="0.051">
+<testsuite name="Use ChoreaVirus when protected by vaccine" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-28T18:36:14" hostname="MARK-GAMING-PC" time="0.003">
   <properties/>
-  <testcase name="Virologist tries to use ChoreaVirus on another Virologist protected by vaccine" classname="Use ChoreaVirus when protected by vaccine" time="0.051">
-    <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at use_chorea_protected.UseChoreaProtected.verifyChoreaVirusEffectOnVirologist(UseChoreaProtected.java:57)
-	at ✽.the ChoreaVirus should have no effect on the Virologist(classpath:features/UseChoreaWhenProtected.feature:11)
-</failure>
-  </testcase>
+  <testcase name="Virologist tries to use ChoreaVirus on another Virologist protected by vaccine" classname="Use ChoreaVirus when protected by vaccine" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

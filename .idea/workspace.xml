@@ -5,115 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ff7db1-20f5-4f1d-bc01-fe0722417dba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/iet-hf-2023-b3ton.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IET-HF.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/bdd_test.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/collect_material/CollectMaterial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/collect_material/CollectMaterialTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/create_agent/CreateAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/create_agent/CreateAgentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/drop_equipment/DropEquipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/drop_equipment/DropEquipmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/moving/MoveToAnotherField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/moving/MoveToAnotherFieldTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_chorea/UseChorea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_chorea/UseChoreaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_chorea_protected/UseChoreaProtected.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_chorea_protected/UseChoreaProtectedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/CollectMaterial.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/CreateAgent.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/DropEquipment.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/MoveToAnotherField.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/UseChorea.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/UseChoreaWhenProtected.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/AxeEquipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/AxeEquipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/BearDanceEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/BearDanceEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/BearDanceVirus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/BearDanceVirus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Canvas$NextActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Canvas$NextActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Canvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Canvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/ChoreaVirus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/ChoreaVirus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/ChoreaVirusGene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/ChoreaVirusGene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Effect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Effect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Equipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/FieldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/FieldView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/GameState$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/GameState$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/GameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/GeneticCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/GeneticCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/GlovesEquipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/GlovesEquipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/InfectedLaboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/InfectedLaboratory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/InventoryPanel$CollectibleData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/InventoryPanel$CollectibleData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/InventoryPanel$GeneticCodeData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/InventoryPanel$GeneticCodeData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/InventoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/InventoryPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Laboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Laboratory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/MemoryLossVirus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/MemoryLossVirus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/MemoryLossVirusGene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/MemoryLossVirusGene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/NeighborFieldsPanel$NeighborFieldsData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/NeighborFieldsPanel$NeighborFieldsData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/NeighborFieldsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/NeighborFieldsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/ParalyzingVirus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/ParalyzingVirus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/ParalyzingVirusGene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/ParalyzingVirusGene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Prototype.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Prototype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/SackEquipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/SackEquipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Shelter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Shelter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Skeleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Skeleton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Storage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Timed.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Timed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedChoreaEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedChoreaEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedMemoryLossEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedMemoryLossEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedParalyzingEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedParalyzingEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedProtectingEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/TimedProtectingEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/UserSelection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/UserSelection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Vaccine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Vaccine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/VaccineGene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/VaccineGene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/Virologist.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/Virologist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/VirologistView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/VirologistView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/WhiteCoatEquipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/WhiteCoatEquipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CollectMaterialWithSackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CollectMaterialWithSackTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CollectMaterialWithoutSackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CollectMaterialWithoutSackTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateChoreaVirusTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateChoreaVirusTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateMemoryLossVirusTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateMemoryLossVirusTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateParalyzingVirusTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateParalyzingVirusTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateVaccineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/CreateVaccineTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/DropEquipmentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/DropEquipmentTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/MoveToAnotherFieldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/MoveToAnotherFieldTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/PickUpEquipmentWhenFullTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/PickUpEquipmentWhenFullTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/PickUpEquipmentWhenNotFullTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/PickUpEquipmentWhenNotFullTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/ScanAlreadyKnownGeneticCodeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/ScanAlreadyKnownGeneticCodeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/ScanNewGeneticCodeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/ScanNewGeneticCodeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/StealEquipmentFromNonParalyzedVirologistTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/StealEquipmentFromNonParalyzedVirologistTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/StealEquipmentFromParalyzedVirologistTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/StealEquipmentFromParalyzedVirologistTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusWhenProtectedByVaccineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusWhenProtectedByVaccineTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusWhenProtectedByWhiteCoatTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusWhenProtectedByWhiteCoatTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusWhenReflectedByGlovesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseChoreaVirusWhenReflectedByGlovesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseMemoryLossVirusTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/UseMemoryLossVirusTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/VirologistMovesWithChoreaVirusInfectionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/projlab/tests/VirologistMovesWithChoreaVirusInfectionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/Use#20ChoreaVirus#20when#20protected#20by#20vaccine.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/Use#20ChoreaVirus#20when#20protected#20by#20vaccine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_chorea_protected/UseChoreaProtected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_chorea_protected/UseChoreaProtected.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,26 +56,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/BME/4.felev/IET_hf/iet-hf-2023-b3ton/src/test/resources/iet_test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/BME/4.felev/IET_hf/iet-hf-2023-b3ton/src/test/resources/iet_test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="collect_material" />
@@ -193,11 +91,24 @@
       <updated>1684788198269</updated>
       <workItem from="1685116826118" duration="6328000" />
       <workItem from="1685188895161" duration="18192000" />
+      <workItem from="1685217057521" duration="101000" />
+      <workItem from="1685297576439" duration="1956000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
