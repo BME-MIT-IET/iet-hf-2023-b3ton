@@ -75,11 +75,11 @@ public class Shelter extends Field {
     public boolean collectBy(Virologist v) {
         Skeleton.printMethodCall(toString(), "collectBy(Virologist v)", true, null);
 
-        Boolean added = v.addEquipment(equipment);
-        if (added == true) {
+        boolean added = v.addEquipment(equipment);
+        if (added) {
             removeEquipment();
         }
-        Skeleton.printMethodCall(toString(), "collectBy(Virologist v)", false, added.toString());
+        Skeleton.printMethodCall(toString(), "collectBy(Virologist v)", false, Boolean.toString(added));
         return added;
     }
 
@@ -87,6 +87,7 @@ public class Shelter extends Field {
      * Visszaadja a Sheleren található equipmentet
      * @return a Shelteren található equipment
      */
+    @Override
     public Equipment getEquipment(){
         return equipment;
     }

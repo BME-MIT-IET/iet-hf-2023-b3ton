@@ -145,6 +145,8 @@ public class Field {
      * elpusztítja a mezőn lévő tárgyakat. Alapesetben nem csinál semmit, de a leszármazottak felüldefiniálhatják.
      */
     public void clearMaterial() {
+        // Mivel nem abstract az osztály ezért meg lehet hívni a függvényt... de nem kéne
+        // throw new UnsupportedOperationException() ;
     }
 
     /**

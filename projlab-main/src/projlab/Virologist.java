@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Virologist {
 
@@ -241,14 +243,10 @@ public class Virologist {
             aminoAcid = aminoAcidLeft;
             int nucleotideLeft = v.addNucleotide(nucleotide);
             nucleotide = nucleotideLeft;
-            try {
-                Equipment lopnivalo = equipments.ceilingEntry(0).getValue();
-                boolean ellopta = v.addEquipment(lopnivalo);
-                if (ellopta) {
-                    equipments.remove(lopnivalo.getId());
-                }
-
-            } catch (IndexOutOfBoundsException e) {
+            Equipment lopnivalo = equipments.ceilingEntry(0).getValue();
+            boolean ellopta = v.addEquipment(lopnivalo);
+            if (ellopta) {
+                equipments.remove(lopnivalo.getId());
             }
         }
         Skeleton.printMethodCall(toString(), "getStolenBy(Virologist v)", false, null);
@@ -516,7 +514,7 @@ public class Virologist {
         }
 
         // Kör elején kifejti a hasChorea hatását, ha van
-        if (Controller.getDeterminism() == false) {
+        if (!Controller.getDeterminism()) {
             boolean hasChorea = false;
             for (Effect effect : getAllEffects()) {
                 if (effect.hasChorea()) {

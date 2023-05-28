@@ -9,16 +9,24 @@ public class ParalyzingVirusGene extends GeneticCode {
     /**
      * A ‘Singleton’ minta szerint az osztály egyetlen példánya tárolva egy statikus privát változóban.
      */
-    private static ParalyzingVirusGene only_instance = null; // az egyetlen példány
+    private static ParalyzingVirusGene onlyInstance = null; // az egyetlen példány
+
+    private static final String PARALYZING_VIRUS_METHOD_NAME = "ParalyzingVirusGene()";
+
+    private static final String GET_INSTANCE_METHOD_NAME = "getInstance()";
+
+    private static final String CREATE_AGENT_METHOD_NAME = "createAgent()";
+
+    private static final String CLASS_TYPE = "ParalyzingVirusGene";
 
     /*
      * Paraméter nélküli PRIVÁT konstruktor, inicializálja a GeneticCode-tól örökölt aminoAcidCost és nucleotideCost változókat
      */
     private ParalyzingVirusGene() {
-        Skeleton.printMethodCall(toString(), "ParalyzingVirusGene() ", true, null);
+        Skeleton.printMethodCall(toString(), PARALYZING_VIRUS_METHOD_NAME, true, null);
         aminoAcidCost = 2;      //random számok, amik megadják, hogy mennyi aminosav és nukleotid kell
         nucleotideCost = 3;         // az előállításához
-        Skeleton.printMethodCall(toString(), "ParalyzingVirusGene() ", false, null);
+        Skeleton.printMethodCall(toString(), PARALYZING_VIRUS_METHOD_NAME, false, null);
     }
 
     /**
@@ -28,13 +36,13 @@ public class ParalyzingVirusGene extends GeneticCode {
      * @return az egyetlen ParalyzingVirusGene
      */
     public static ParalyzingVirusGene getInstance(){
-        Skeleton.printMethodCall("ParalyzingVirusGene", "getInstance()", true, null);
-        if (only_instance == null){
-            only_instance = new ParalyzingVirusGene();
-            Controller.addGeneticCode(only_instance);
+        Skeleton.printMethodCall(CLASS_TYPE, GET_INSTANCE_METHOD_NAME, true, null);
+        if (onlyInstance == null){
+            onlyInstance = new ParalyzingVirusGene();
+            Controller.addGeneticCode(onlyInstance);
         }
-        Skeleton.printMethodCall("ParalyzingVirusGene", "getInstance()", false, only_instance.toString());
-        return only_instance;
+        Skeleton.printMethodCall(CLASS_TYPE, GET_INSTANCE_METHOD_NAME, false, onlyInstance.toString());
+        return onlyInstance;
     }
 
     /**
@@ -43,9 +51,9 @@ public class ParalyzingVirusGene extends GeneticCode {
      * @return ParalyzingVirusGenehez tartozó ParalyzingVirus
      */
     public ParalyzingVirus createAgent() {
-        Skeleton.printMethodCall(toString(), "createAgent()", true, null);
+        Skeleton.printMethodCall(toString(), CREATE_AGENT_METHOD_NAME, true, null);
         ParalyzingVirus pv = new ParalyzingVirus();
-        Skeleton.printMethodCall(toString(), "createAgent()", false, pv.toString());
+        Skeleton.printMethodCall(toString(), CREATE_AGENT_METHOD_NAME, false, pv.toString());
         return pv;
     }
     
@@ -56,6 +64,6 @@ public class ParalyzingVirusGene extends GeneticCode {
      */
     @Override
     public String toString() {
-        return "ParalyzingVirusGene" + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
+        return CLASS_TYPE + "(" + aminoAcidCost + ", " + nucleotideCost + ")";
     }
 }

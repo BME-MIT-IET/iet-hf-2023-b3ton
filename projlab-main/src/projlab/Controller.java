@@ -93,6 +93,8 @@ public class Controller {
      */
     private static HashSet<GeneticCode> geneticCodes = new HashSet<GeneticCode>();
 
+    private static final String chooseActionLiteral = "Choose Action again";
+
     /**
      * Visszaadja a játékban jelenlévő összes genetikai kódot
      * @return geneticCodes - genetikai kódok hashSet-e
@@ -234,142 +236,27 @@ public class Controller {
             return;
         }
         
-        boolean virologistSelected = userSel.selectedVirologistID != -1;
-        boolean fieldSelected = userSel.selectedFieldID != -1;
-        boolean agentSelected = userSel.selectedAgentID != -1;
-        boolean equipmentSelected = userSel.selectedEquipmentID != -1;
-        boolean geneticCodeSelected = userSel.selectedGeneticCode != null;
+        boolean virologistSelected = userSel.getSelectedVirologistID() != -1;
+        boolean fieldSelected = userSel.getSelectedFieldID() != -1;
+        boolean agentSelected = userSel.getSelectedAgentID() != -1;
+        boolean equipmentSelected = userSel.getSelectedEquipmentID() != -1;
+        boolean geneticCodeSelected = userSel.getSelectedGeneticCode() != null;
 
         switch(gs){
             case  WAITING_FOR_MOVE:
             {
-                if (fieldSelected) {
-                    Field nextField = getField(userSel.selectedFieldID);
-                    Field currentField = currentVir.getCurrentField();
-                    if (nextField!=null && !currentField.equals(nextField)){
-                        currentVir.moveTo(nextField);
-                    }
-                    canvas.setConsole("Choose Action");
-                }
-                else {
-                    canvas.setConsole("No field selected. " + 
-                                        "Choose Action");
-                }
+                handleMoveWaiting(userSel, canvas, currentVir, fieldSelected);
                 break;
             }
             case WAITING_FOR_ACTION:
             {
-                switch(userSel.selectedAction){
-                    case CREATE_AGENT:
-                    {
-                        if (geneticCodeSelected) {
-                            HashSet<GeneticCode> geneticCodes = currentVir.getGeneticCodes();
-                            boolean gcIsScanned = false;
-                            for (GeneticCode gencode : geneticCodes) {
-                                if (gencode.equals(userSel.selectedGeneticCode)) {
-                                    currentVir.createAgent(userSel.selectedGeneticCode);
-                                    gcIsScanned = true;
-                                    break;
-                                }
-                            }
-                            if (!gcIsScanned) {
-                                canvas.setConsole("ERROR: Virologist has not scanned the selected genetic code. " + 
-                                "Choose Action again");
-                                return;
-                            }
-                        }
-                        else {
-                            canvas.setConsole("ERROR: No genetic code selected. " + 
-                            "Choose Action again");
-                            return;
-                        }
-                        break;
-                    }
-                    case DROP_EQUIPMENT:
-                    {
-                        if (equipmentSelected) {
-                            Equipment equipment = currentVir.getEquipments().get(userSel.selectedEquipmentID);
-                            currentVir.dropEquipment(equipment);
-                        }
-                        else {
-                            canvas.setConsole("ERROR: No equipment selected. " + 
-                            "Choose Action again");
-                            return;
-                        }
-                        break;
-                    }
-                    case KILL:
-                    {
-                        if (virologistSelected) {
-                            Virologist targetVir = getVirologist(userSel.selectedVirologistID);
-                            currentVir.kill(targetVir);
-                        }
-                        else {
-                            canvas.setConsole("ERROR: No virologist selected to kill. " + 
-                            "Choose Action again");
-                            return;
-                        }
-                        break;
-                    }
-                    case STEAL:
-                    {
-                        if (virologistSelected) {
-                            Virologist targetVir = getVirologist(userSel.selectedVirologistID);
-                            currentVir.stealFrom(targetVir);
-                        }
-                        else {
-                            canvas.setConsole("ERROR: No virologist selected to steal from. " + 
-                            "Choose Action again");
-                            return;
-                        }
-                        break;
-                    }
-                    case USE_AGENT:
-                    {
-                        if (virologistSelected && agentSelected) {
-                            Virologist targetVir = getVirologist(userSel.selectedVirologistID);
-                            Agent agent = currentVir.getAgents().get(userSel.selectedAgentID);
-                            currentVir.useAgentOn(targetVir, agent);
-                        }
-                        else if (!virologistSelected) {
-                            canvas.setConsole("ERROR: No virologist selected to use agent on. " + 
-                            "Choose Action again");
-                            return;
-                        }
-                        else {
-                            canvas.setConsole("ERROR: No agent selected to use. " + 
-                            "Choose Action again");
-                            return;
-                        }
-                        break;
-                    }
-                    case COLLECT:
-                    {
-                        currentVir.collectFromField();
-                        break;
-                    }
-                    case SKIP:
-                    {
-                        canvas.setConsole("No action selected. " + 
-                        "Your turn has ended. Press Next to continue");
-                        break;
-                    }
-                    default:
-                    {
-                        canvas.setConsole("FAILURE: Undefined selected action.");
-                        return;
-                    }
-                }
-                
-                if (userSel.selectedAction != Action.SKIP && gs!=GameState.GAME_ENDED) {
-                    canvas.setConsole("Your turn has ended. Press Next to continue");
-                }
+                if (handleAction(userSel, canvas, currentVir, virologistSelected, agentSelected, equipmentSelected, geneticCodeSelected))
+                    return;
                 break;
             }
             case WAITING_FOR_NEXT_TURN:
             {
-                nextTurn();
-                canvas.setConsole("Choose field to step on");
+                handleNextTurn(canvas);
                 break;
             }
             case GAME_ENDED:
@@ -382,12 +269,160 @@ public class Controller {
         refreshView();
     }
 
+    private static void handleNextTurn(Canvas canvas) {
+        nextTurn();
+        canvas.setConsole("Choose field to step on");
+    }
+
+    private static boolean handleAction(UserSelection userSel, Canvas canvas, Virologist currentVir, boolean virologistSelected, boolean agentSelected, boolean equipmentSelected, boolean geneticCodeSelected) {
+        switch(userSel.getSelectedAction()){
+            case CREATE_AGENT:
+                if (handleCreateAgent(userSel, canvas, currentVir, geneticCodeSelected)) return true;
+                break;
+            case DROP_EQUIPMENT:
+                if (handleDropEquipment(userSel, canvas, currentVir, equipmentSelected)) return true;
+                break;
+            case KILL:
+                if (handleKill(userSel, canvas, currentVir, virologistSelected)) return true;
+                break;
+            case STEAL:
+                if (handleSteal(userSel, canvas, currentVir, virologistSelected)) return true;
+                break;
+            case USE_AGENT:
+                if (handleUseAgent(userSel, canvas, currentVir, virologistSelected, agentSelected)) return true;
+                break;
+            case COLLECT:
+                handleCollect(currentVir);
+                break;
+            case SKIP:
+                handleSkip(canvas);
+                break;
+            default:
+                canvas.setConsole("FAILURE: Undefined selected action.");
+                return true;
+        }
+
+        if (userSel.getSelectedAction() != Action.SKIP && gs!=GameState.GAME_ENDED) {
+            canvas.setConsole("Your turn has ended. Press Next to continue");
+        }
+        return false;
+    }
+
+    private static void handleSkip(Canvas canvas) {
+        canvas.setConsole("No action selected. " +
+        "Your turn has ended. Press Next to continue");
+    }
+
+    private static void handleCollect(Virologist currentVir) {
+        currentVir.collectFromField();
+    }
+
+    private static boolean handleUseAgent(UserSelection userSel, Canvas canvas, Virologist currentVir, boolean virologistSelected, boolean agentSelected) {
+        if (virologistSelected && agentSelected) {
+            Virologist targetVir = getVirologist(userSel.getSelectedVirologistID());
+            Agent agent = currentVir.getAgents().get(userSel.getSelectedAgentID());
+            currentVir.useAgentOn(targetVir, agent);
+        }
+        else if (!virologistSelected) {
+            canvas.setConsole("ERROR: No virologist selected to use agent on. " +
+                    chooseActionLiteral);
+            return true;
+        }
+        else {
+            canvas.setConsole("ERROR: No agent selected to use. " +
+                    chooseActionLiteral);
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean handleSteal(UserSelection userSel, Canvas canvas, Virologist currentVir, boolean virologistSelected) {
+        if (virologistSelected) {
+            Virologist targetVir = getVirologist(userSel.getSelectedVirologistID());
+            currentVir.stealFrom(targetVir);
+        }
+        else {
+            canvas.setConsole("ERROR: No virologist selected to steal from. " +
+                    chooseActionLiteral);
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean handleKill(UserSelection userSel, Canvas canvas, Virologist currentVir, boolean virologistSelected) {
+        if (virologistSelected) {
+            Virologist targetVir = getVirologist(userSel.getSelectedVirologistID());
+            currentVir.kill(targetVir);
+        }
+        else {
+            canvas.setConsole("ERROR: No virologist selected to kill. " +
+                    chooseActionLiteral);
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean handleDropEquipment(UserSelection userSel, Canvas canvas, Virologist currentVir, boolean equipmentSelected) {
+        if (equipmentSelected) {
+            Equipment equipment = currentVir.getEquipments().get(userSel.getSelectedEquipmentID());
+            currentVir.dropEquipment(equipment);
+        }
+        else {
+            canvas.setConsole("ERROR: No equipment selected. " +
+                    chooseActionLiteral);
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean handleCreateAgent(UserSelection userSel, Canvas canvas, Virologist currentVir, boolean geneticCodeSelected) {
+        if (geneticCodeSelected) {
+            HashSet<GeneticCode> geneticCodes = currentVir.getGeneticCodes();
+            boolean gcIsScanned = false;
+            for (GeneticCode gencode : geneticCodes) {
+                if (gencode.equals(userSel.getSelectedGeneticCode())) {
+                    currentVir.createAgent(userSel.getSelectedGeneticCode());
+                    gcIsScanned = true;
+                    break;
+                }
+            }
+            if (!gcIsScanned) {
+                canvas.setConsole("ERROR: Virologist has not scanned the selected genetic code. " +
+                        chooseActionLiteral);
+                return true;
+            }
+        }
+        else {
+            canvas.setConsole("ERROR: No genetic code selected. " +
+                    chooseActionLiteral);
+            return true;
+        }
+        return false;
+    }
+
+    private static void handleMoveWaiting(UserSelection userSel, Canvas canvas, Virologist currentVir, boolean fieldSelected) {
+        if (fieldSelected) {
+            Field nextField = getField(userSel.getSelectedFieldID());
+            Field currentField = currentVir.getCurrentField();
+            if (nextField!=null && !currentField.equals(nextField)){
+                currentVir.moveTo(nextField);
+            }
+            canvas.setConsole("Choose Action");
+        }
+        else {
+            canvas.setConsole("No field selected. " +
+                                "Choose Action");
+        }
+    }
+
     private static void refreshView() {
         Virologist virologist = getCurrentVirologist();
-        VirologistView.getInstance().setVirologist(virologist);
-        FieldView.getInstance().setField(virologist.getCurrentField());
-        FieldView.getInstance().draw();
-        VirologistView.getInstance().draw();
+        if (virologist != null) {
+            VirologistView.getInstance().setVirologist(virologist);
+            FieldView.getInstance().setField(virologist.getCurrentField());
+            FieldView.getInstance().draw();
+            VirologistView.getInstance().draw();
+        }
     }
 
     /**

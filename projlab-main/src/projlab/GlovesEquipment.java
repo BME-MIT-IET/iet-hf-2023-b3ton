@@ -26,6 +26,7 @@ public class GlovesEquipment extends Equipment {
      * @return a vizsgált effect GlovesEquipment-e,
      *         mivel igen, a visszatérési érték true
      */
+    @Override
     public boolean reflect() {
         Skeleton.printMethodCall(toString(), "reflect()", true, null);
         Boolean reflects;

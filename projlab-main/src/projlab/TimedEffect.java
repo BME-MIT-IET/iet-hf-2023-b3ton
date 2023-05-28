@@ -16,7 +16,7 @@ public abstract class TimedEffect extends Effect {
     @Override
     public boolean timePasses() {
         --timeLeft;
-        return timeLeft <= 0 ? true : false; 
+        return timeLeft <= 0;
     }
 
     /**

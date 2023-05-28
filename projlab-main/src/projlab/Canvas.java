@@ -32,7 +32,7 @@ public class Canvas extends JFrame {
     /**
      * Az egyedüli példány az osztályból.
      */
-    private static Canvas only_instance = null;
+    private static Canvas onlyInstance = null;
 
     /**
      * A BorderLayout-ot követő ablak 4 területén lévő JPanel.
@@ -116,7 +116,7 @@ public class Canvas extends JFrame {
         pack();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        setExtendedState(getExtendedState() | java.awt.Frame.MAXIMIZED_BOTH);
 	}
 
     /**
@@ -124,10 +124,10 @@ public class Canvas extends JFrame {
      * @return az egyedüli példány
      */
     public static Canvas getInstance() {
-        if (only_instance == null) {
-            only_instance = new Canvas();
+        if (onlyInstance == null) {
+            onlyInstance = new Canvas();
         }
-        return only_instance;
+        return onlyInstance;
     }
 
     /**
@@ -223,7 +223,7 @@ public class Canvas extends JFrame {
      * Inicializálja a virologists ButtonGroup-ot, de még nem tesz bele JRadioButtont
      */
     private void initializeVirologists() {
-        virologists = new ArrayList<JRadioButton>();
+        virologists = new ArrayList<>();
         virologistsGroup = new ButtonGroup();
     }
 

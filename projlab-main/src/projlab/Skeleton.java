@@ -41,7 +41,7 @@ public class Skeleton {
 
         isPrinting = true;
         boolean exit = false;
-        while (exit == false) {
+        while (!exit) {
             System.out.println("Válassz egy lehetőséget:");
             System.out.println("0: Kilépés");
 
@@ -92,7 +92,7 @@ public class Skeleton {
      */
     public static void printMethodCall(String classType, String methodName, boolean starts, String returnValue) {
         if (isPrinting) {
-            if (starts == true) {
+            if (starts) {
                 printTabs();
                 System.out.println(classType + ": " + methodName + " START");
                 numberOfTabs++;
