@@ -40,7 +40,3 @@ dependencies {
     testImplementation 'io.cucumber:cucumber-junit:7.12.0'
     testImplementation 'junit:junit:4.13.1'
 }
-
-run {
-    systemProperty 'java.awt.headless', 'false'
-}
