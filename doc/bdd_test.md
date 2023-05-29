@@ -6,11 +6,12 @@ Kezdetben utánajártam, hogy hogyan kell használni a Cucumber-t, hogyan kell a
 
 ## Tesztelt szcenáriók
 - Felvett nukleotidmennyiség tesztelése zsákkal és zsák nélkül
-- Különböző típusú vírusok készítése
 - Felszerelés eldobása
 - Mozgás másik mezőre
 - Fertőzés Chorea vírussal védelem nélkül
 - Fertőzés Chorea vírussal védelemmel
+- Új kód megtanulása (_Szarvas Dániel_)
+- Felszerelés ellopása (_Szarvas Dániel_)
 
 ### Példa:
 
