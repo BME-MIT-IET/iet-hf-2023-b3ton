@@ -5,5 +5,5 @@ A projekt célja, hogy a szoftprojlabra készített házifeladatot teszteljük a
 A tesztelés során a következő technológiákkal dolgozunk:
 - Build keretrendszer és CI beüzemelése
 - Manuális kód átvizsgálás elvégzése az alkalmazás egy részére + Statikus analízis eszköz futtatása és jelzett hibák átnézése (SonarCloud)
-- DD tesztek készítése (Cucumber)
+- BDD tesztek készítése (Cucumber)
 - Manuális tesztek megtervezése, végrehajtása és dokumentálása vagy exploratory testing
